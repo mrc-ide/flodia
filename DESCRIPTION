@@ -1,16 +1,15 @@
 Package: flodia
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Flow Diagrams for Compartmental Models
+Version: 0.0.1
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+    c(person(given = "Lilith",
+             family = "Whittles",
+             role = c("aut", "cre"),
+             email = "l.whittles@imperial.ac.uk"))
+Description: Tools to create compartmental model flow diagrams in base R
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Language: en-GB
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
