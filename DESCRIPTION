@@ -16,6 +16,7 @@ Imports:
     ghibli,
     shape,
     graphics,
-    grDevices
+    grDevices,
+    withr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
