@@ -6,10 +6,16 @@ Authors@R:
              family = "Whittles",
              role = c("aut", "cre"),
              email = "l.whittles@imperial.ac.uk"))
-Description: Tools to create compartmental model flow diagrams in base R
+Description: Tools to create compartmental model flow diagrams in base R.
 License: MIT + file LICENSE
+URL: https://github.com/mrc-ide/flodia
 Encoding: UTF-8
 LazyData: true
 Language: en-GB
+Imports:
+    ghibli,
+    shape,
+    graphics,
+    grDevices
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
