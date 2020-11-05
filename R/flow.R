@@ -48,8 +48,8 @@ flow <- function(node0 = NULL, node1 = NULL, label = "",
     x1 <- node1$x0
   }
 
-  Arrows(x0, y0, x1, y1, arr_type = arr_type, arr_adj = 1,
-         arr_length = arr_length, arr_width = arr_width, ...)
+  Arrows(x0, y0, x1, y1, arr.type = arr_type, arr.adj = 1,
+         arr.length = arr_length, arr.width = arr_width, ...)
 
   if (x0 == x1) {
     x <- x0 + label_gap

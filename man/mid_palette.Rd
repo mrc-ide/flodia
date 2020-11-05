@@ -9,7 +9,8 @@ mid_palette(col)
 \arguments{
 \item{col}{either an integer vector between 1 and X or a string of the
 following possible colour names: rd, or, oryl, yl, ylgn, gn, gnbu, bu, bupu,
-pu, pupi, pi, gr}
+pu, pupi, pi, gr
+@export}
 }
 \description{
 mid palette

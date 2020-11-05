@@ -11,6 +11,7 @@ get_ghibli <- function() {
       "TotoroDark")
   out <- lapply(palettes, ghibli::ghibli_palette, n = 7)
   names(out) <- palettes
+  out
 }
 
 
@@ -18,7 +19,7 @@ get_ghibli <- function() {
 #'@param col either an integer vector between 1 and X or a string of the
 #' following possible colour names: rd, or, oryl, yl, ylgn, gn, gnbu, bu, bupu,
 #'  pu, pupi, pi, gr
-
+#'@export
 light_palette <- function(col) {
   gp <- get_ghibli()
   palette <- c(rd = gp$MononokeLight[5], or = gp$MononokeLight[6],
@@ -32,7 +33,7 @@ light_palette <- function(col) {
 #'@param col either an integer vector between 1 and X or a string of the
 #' following possible colour names: rd, or, oryl, yl, ylgn, gn, gnbu, bu, bupu,
 #'  pu, pupi, pi, gr
-
+#'  @export
 mid_palette <- function(col) {
   gp <- get_ghibli()
   gp[1]

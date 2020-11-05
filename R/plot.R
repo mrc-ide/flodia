@@ -1,5 +1,6 @@
 
 #' @title start a flodia plot
+#' @param f flowia plot function
 #' @param x0 left-most x
 #' @param y0 bottom-most y
 #' @param x1 right-most x
@@ -13,11 +14,16 @@
 #' @importFrom grDevices png
 #' @importFrom graphics par
 #' @importFrom withr with_par
-start_plot <- function(x0, y0, x1, y1, filepath, width = 1200, res = 200,
+flodia <- function(f, x0, y0, x1, y1, filepath, width = 1200, res = 200,
                        oma = c(1, 1, 1, 1)) {
   height <- round(width * (y1 - y0) / (x1 - x0))
   png(filepath, width, height, res = res)
-  withr::with_par(mar = rep(0, 4), mgp = rep(0, 3), bty = "n", oma = oma)
-  plot(0, 0, type = "n", xlim = c(x0, x1), ylim = c(y0, y1), axes = FALSE)
-  message("Remember to close with dev.off()!")
+  withr::with_par(new = list(mar = rep(0, 4), mgp = rep(0, 3), bty = "n",
+                             oma = oma),
+                  code = {
+                    plot(0, 0, type = "n", xlim = c(x0, x1),
+                         ylim = c(y0, y1), axes = FALSE)
+                    f()
+                  })
+  dev.off()
 }
