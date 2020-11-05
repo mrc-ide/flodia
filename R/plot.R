@@ -12,6 +12,7 @@
 #' @param oma outer margin of plot, default is 1
 #' @export
 #' @importFrom grDevices png
+#' @importFrom grDevices dev.off
 #' @importFrom graphics par
 #' @importFrom withr with_par
 flodia <- function(f, x0, y0, x1, y1, filepath, width = 1200, res = 200,
