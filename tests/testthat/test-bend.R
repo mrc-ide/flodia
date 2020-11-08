@@ -33,7 +33,7 @@ fivepoint <- function() {
         label_col = mid_palette("bupu"), label_to = "purple")
   bendx(mid, bl, label_from = "green bold", label_from_gap = -0.05,
         label_to = "green bold", label_to_gap = 0.2,
-        label_col = mid_palette("gn"), font = 2)
+        label_col = mid_palette("gn"), label_font = 2)
 
   list(x0 = bl$x0, x1 = tr$x1, y0 = bl$y0, y1 = tr$y1)
 }
