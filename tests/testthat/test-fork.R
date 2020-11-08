@@ -17,7 +17,7 @@ fork <- function() {
   b1 <- node(0.4, -1, r, label = "b1", node_col = light_palette("gnbu"))
 
   forkx(mid, r0, r1, label_from = "from", label_to0 = "to0", label_to1 = "to1")
-  forkx(mid, l0, l1, label_from = "nearer", label_fsrom_pos = 0.8,
+  forkx(mid, l0, l1, label_from = "nearer", label_from_pos = 0.8,
         label_to0 = "below", label_to0_gap = -0.05,
         label_to1 = "nearer", label_to1_pos = 0.2)
   forky(mid, t0, t1, label_from = "x", label_to0 = "y", label_to1 = "z",
