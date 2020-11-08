@@ -33,7 +33,7 @@ flodia <- function(f, oma = 0.1) {
 flodia_png <- function(f, filepath, width = 1200, res = 200, oma = 0.1) {
 
   # extract co-ordinates of flow diagram
-  z <- flodia(f, oma)
+  z <- flodia_null(f)
 
   height <- round(width * (z$y1 - z$y0) / (z$x1 - z$x0))
   png(filepath, width, height, res = res)

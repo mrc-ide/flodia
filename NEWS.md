@@ -1,6 +1,7 @@
 # flodia 0.0.3
 
 * add turn and split functions
+* fix bug in png plotting
 
 # flodia 0.0.2
 
