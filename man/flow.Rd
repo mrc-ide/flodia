@@ -12,11 +12,13 @@ flow(
   label_pos = NULL,
   label_gap = NULL,
   label_col = "black",
-  font = 3,
+  label_font = 3,
   label_cex = 0.8,
   arr_type = "triangle",
+  arr_col = "black",
   arr_length = 0.2,
   arr_width = NULL,
+  arr_lty = 1,
   ...
 )
 }
@@ -38,15 +40,19 @@ default = 0.1}
 
 \item{label_col}{colour of label, defaults to black}
 
-\item{font}{font of label, defaults to 3}
+\item{label_font}{font of label, defaults to 3}
 
 \item{label_cex}{label cex, defualts to 0.8}
 
 \item{arr_type}{type of arrow head to draw default = triangle}
 
+\item{arr_col}{colour of arrow default = black}
+
 \item{arr_length}{length of arrow head, defaults to 0.2}
 
 \item{arr_width}{width of arrow head, defaults to 0.15}
+
+\item{arr_lty}{lty of arrow, defaults to 1}
 
 \item{...}{additional formatting arguments to arrow()}
 }
