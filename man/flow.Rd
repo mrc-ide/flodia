@@ -5,25 +5,25 @@
 \title{add a flow between two nodes}
 \usage{
 flow(
-  node0 = NULL,
-  node1 = NULL,
-  label = "",
-  pos = 0.5,
-  label_pos = 0.5,
-  label_gap = 0.1,
+  from,
+  to,
+  label = NULL,
+  pos = NULL,
+  label_pos = NULL,
+  label_gap = NULL,
   label_col = "black",
   font = 3,
   label_cex = 0.8,
   arr_type = "triangle",
   arr_length = 0.2,
-  arr_width = 0.15,
+  arr_width = NULL,
   ...
 )
 }
 \arguments{
-\item{node0}{start node}
+\item{from}{start node}
 
-\item{node1}{end node}
+\item{to}{end node}
 
 \item{label}{label to draw on flow}
 
