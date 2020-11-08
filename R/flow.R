@@ -40,21 +40,26 @@ flow <- function(from, to, label = NULL,
   x0 <- x1 <- calc_pos(from$x0, from$x1, pos)
   y0 <- y1 <- calc_pos(from$y0, from$y1, pos)
 
-  if (from$y0 > to$y1) {
+  if (from$y0 > to$y1) { # down
     y0 <- from$y0
     y1 <- to$y1
-  }
-  if (from$x0 > to$x1) {
+    x <- x0 + label_gap
+    y <- calc_pos(from$y0, to$y1, label_pos)
+  } else if (from$x0 > to$x1) { # left
     x0 <- from$x0
     x1 <- to$x1
-  }
-  if (from$y1 < to$y0) {
+    x <- calc_pos(from$x0, to$x1, label_pos)
+    y <- y0 + label_gap
+  } else if (from$y1 < to$y0) { # up
     y0 <- from$y1
     y1 <- to$y0
-  }
-  if (from$x1 < to$x0) {
+    x <- x0 + label_gap
+    y <- calc_pos(from$y1, to$y0, label_pos)
+  } else if (from$x1 < to$x0) { # right
     x0 <- from$x1
     x1 <- to$x0
+    x <- calc_pos(from$x1, to$x0, label_pos)
+    y <- y0 + label_gap
   }
 
   segments(x0, y0, x1, y1, lty = arr_lty, col = arr_col, ...)
@@ -66,14 +71,6 @@ flow <- function(from, to, label = NULL,
     Arrowhead(x1, y1, angle = angle, arr.type = arr_type, arr.adj = 1,
               arr.lwd = 1e-6, arr.length = arr_length, arr.width = arr_width,
               lty = 1, arr.col = arr_col, lcol = arr_col, ...)
-  }
-
-  if (x0 == x1) {
-    x <- x0 + label_gap
-    y <- calc_pos(from$y, to$y, label_pos)
-  } else if (y0 == y1) {
-    x <- calc_pos(from$x, to$x, label_pos)
-    y <- y0 + label_gap
   }
 
   text(x, y, labels = label, font = label_font, cex = label_cex,
