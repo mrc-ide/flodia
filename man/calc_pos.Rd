@@ -4,14 +4,14 @@
 \alias{calc_pos}
 \title{calculates the weighted mean point between two points}
 \usage{
-calc_pos(x0, x1, pos = 0.5)
+calc_pos(x0, x1, pos = NULL)
 }
 \arguments{
 \item{x0}{first point}
 
 \item{x1}{second point}
 
-\item{pos}{weighting towards first point, defaults to 0.5}
+\item{pos}{distance (between 0, 1) from first point, defaults to 0.5}
 }
 \description{
 calculates the weighted mean point between two points

@@ -1,6 +1,6 @@
 Package: flodia
 Title: Flow Diagrams for Compartmental Models
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     c(person(given = "Lilith",
              family = "Whittles",
@@ -20,3 +20,6 @@ Imports:
     withr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Suggests: 
+    testthat,
+    vdiffr
