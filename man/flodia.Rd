@@ -2,40 +2,15 @@
 % Please edit documentation in R/plot.R
 \name{flodia}
 \alias{flodia}
-\title{start a flodia plot}
+\title{plot a flodia}
 \usage{
-flodia(
-  f,
-  x0,
-  y0,
-  x1,
-  y1,
-  filepath,
-  width = 1200,
-  res = 200,
-  oma = c(1, 1, 1, 1)
-)
+flodia(f, oma = 0.1)
 }
 \arguments{
-\item{f}{flowia plot function}
+\item{f}{flodia plot function}
 
-\item{x0}{left-most x}
-
-\item{y0}{bottom-most y}
-
-\item{x1}{right-most x}
-
-\item{y1}{top-most y}
-
-\item{filepath}{desired location of output eg "test.png"}
-
-\item{width}{width in pixels of output (height is calculated automatically
-based on plot dimensions)}
-
-\item{res}{resolution of plot default = 200 dpi}
-
-\item{oma}{outer margin of plot, default is 1}
+\item{oma}{single numeric outer margin of plot, default is 1}
 }
 \description{
-start a flodia plot
+plot a flodia
 }
