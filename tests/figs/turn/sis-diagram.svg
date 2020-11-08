@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 720.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    line, polyline, polygon, path, rect, circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<text transform='translate(-2.88,291.34) rotate(-90)' style='font-size: 12.00px; font-family: Liberation Sans;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
+<rect x='110.00' y='88.00' width='83.33' height='66.67' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<text x='141.00' y='124.44' style='font-size: 12.00px; font-family: Liberation Sans;' textLength='21.33px' lengthAdjust='spacingAndGlyphs'>S[1]</text>
+<rect x='526.67' y='88.00' width='83.33' height='66.67' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<text x='560.01' y='124.44' style='font-size: 12.00px; font-family: Liberation Sans;' textLength='16.66px' lengthAdjust='spacingAndGlyphs'>I[1]</text>
+<rect x='110.00' y='421.33' width='83.33' height='66.67' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<text x='141.00' y='457.78' style='font-size: 12.00px; font-family: Liberation Sans;' textLength='21.33px' lengthAdjust='spacingAndGlyphs'>S[2]</text>
+<rect x='526.67' y='421.33' width='83.33' height='66.67' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<text x='560.01' y='457.78' style='font-size: 12.00px; font-family: Liberation Sans;' textLength='16.66px' lengthAdjust='spacingAndGlyphs'>I[2]</text>
+<line x1='193.33' y1='121.33' x2='526.67' y2='121.33' style='stroke-width: 0.75;' />
+<polygon points='519.61,123.98 526.67,121.33 519.61,118.69 ' style='stroke-width: 0.00; fill: #000000;' />
+<text x='357.77' y='107.14' style='font-size: 9.60px; font-family: Symbola;' textLength='4.45px' lengthAdjust='spacingAndGlyphs'>β</text>
+<rect x='568.33' y='54.67' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='568.33' y1='88.00' x2='568.33' y2='54.67' style='stroke-width: 0.75; stroke-dasharray: 4.00,4.00;' />
+<rect x='151.67' y='54.67' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='568.33' y1='54.67' x2='151.67' y2='54.67' style='stroke-width: 0.75; stroke-dasharray: 4.00,4.00;' />
+<text x='357.81' y='39.20' style='font-size: 9.60px; font-family: Symbola;' textLength='4.38px' lengthAdjust='spacingAndGlyphs'>γ</text>
+<line x1='151.67' y1='54.67' x2='151.67' y2='88.00' style='stroke-width: 0.75; stroke-dasharray: 4.00,4.00;' />
+<polygon points='149.02,80.95 151.67,88.00 154.31,80.95 ' style='stroke-width: 0.00; fill: #000000;' />
+<rect x='543.33' y='521.33' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='543.33' y1='488.00' x2='543.33' y2='521.33' style='stroke-width: 0.75; stroke: #5C5992;' />
+<text x='556.98' y='518.10' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='14.38px' lengthAdjust='spacingAndGlyphs'>low</text>
+<rect x='176.67' y='521.33' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='543.33' y1='521.33' x2='176.67' y2='521.33' style='stroke-width: 0.75; stroke: #5C5992;' />
+<text x='347.75' y='541.43' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='24.50px' lengthAdjust='spacingAndGlyphs'>under</text>
+<line x1='176.67' y1='521.33' x2='176.67' y2='488.00' style='stroke-width: 0.75; stroke: #5C5992;' />
+<polygon points='179.31,495.05 176.67,488.00 174.02,495.05 ' style='stroke-width: 0.00; stroke: #5C5992; fill: #5C5992;' />
+<text x='188.45' y='497.15' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='18.11px' lengthAdjust='spacingAndGlyphs'>high</text>
+<rect x='651.67' y='141.33' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='610.00' y1='141.33' x2='651.67' y2='141.33' style='stroke-width: 0.75;' />
+<text x='624.17' y='126.78' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='13.33px' lengthAdjust='spacingAndGlyphs'>top</text>
+<rect x='651.67' y='434.67' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='651.67' y1='141.33' x2='651.67' y2='434.67' style='stroke-width: 0.75;' />
+<text x='597.48' y='291.43' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='25.03px' lengthAdjust='spacingAndGlyphs'>inside</text>
+<line x1='651.67' y1='434.67' x2='610.00' y2='434.67' style='stroke-width: 0.75;' />
+<polygon points='617.05,432.02 610.00,434.67 617.05,437.31 ' style='stroke-width: 0.00; fill: #000000;' />
+<text x='628.68' y='454.76' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='29.31px' lengthAdjust='spacingAndGlyphs'>bottom</text>
+<rect x='68.33' y='454.67' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='110.00' y1='454.67' x2='68.33' y2='454.67' style='stroke-width: 1.50;' />
+<rect x='68.33' y='121.33' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='68.33' y1='454.67' x2='68.33' y2='121.33' style='stroke-width: 1.50;' />
+<text x='97.48' y='291.43' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='25.03px' lengthAdjust='spacingAndGlyphs'>inside</text>
+<line x1='68.33' y1='121.33' x2='110.00' y2='121.33' style='stroke-width: 1.50;' />
+<polygon points='102.95,123.98 110.00,121.33 102.95,118.69 ' style='stroke-width: 1.50; fill: #000000;' />
+</svg>
