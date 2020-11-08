@@ -24,26 +24,31 @@
 #'  `label_from` default = 0.05
 #' @param label_to0_gap distance from the flow into `to0` at which to draw
 #'  `label_to0` default = 0.05
-#'  @param label_to1_gap distance from the flow into `to1` at which to draw
+#' @param label_to1_gap distance from the flow into `to1` at which to draw
 #'  `label_to1` default = 0.05
 #' @param arr_width width of arrow, defaults to same as [flow()]
 #' @param ... additional formatting arguments to [flow()]
 #' @return returns the start and end points of the flow
 #' @export
 forkx <-
-  function(from, to0, to1, pos,
+  function(from, to0, to1, pos = NULL,
            label_from = NULL, label_to0 = NULL, label_to1 = NULL,
            pos_from = NULL, pos_to0 = NULL, pos_to1 = NULL,
            label_from_pos = NULL, label_to0_pos = NULL, label_to1_pos = NULL,
            label_from_gap = NULL, label_to0_gap = NULL, label_to1_gap = NULL,
            arr_width = NULL, ...) {
 
-  nearest <- ifelse(abs(to0$x - from$x) < abs(to1$x - from$x), to0, to1)
+  if (abs(to0$x - from$x) < abs(to1$x - from$x)) {
+    nearest <- to0
+  } else {
+    nearest <- to1
+  }
   split <- node(calc_pos(from$x, nearest$x, pos),
                 calc_pos(from$y0, from$y1, pos_from),
                 r = 0)
 
-  flow(from, split, label_from, label_pos = label_pos_from, arr_width = 0)
+  flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
+       ...)
   bendy(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
         label_to_gap = label_to0_gap, arr_width = arr_width, ...)
   bendy(split, to1, label_to = label_to1, label_to_pos = label_to1_pos,
@@ -82,26 +87,32 @@ forkx <-
 #'  `label_from` default = 0.05
 #' @param label_to0_gap distance from the flow into `to0` at which to draw
 #'  `label_to0` default = 0.05
-#'  @param label_to1_gap distance from the flow into `to1` at which to draw
+#' @param label_to1_gap distance from the flow into `to1` at which to draw
 #'  `label_to1` default = 0.05
 #' @param arr_width width of arrow, defaults to same as [flow()]
 #' @param ... additional formatting arguments to [flow()]
 #' @return returns the start and end points of the flow
 #' @export
 forky <-
-  function(from, to0, to1, pos,
+  function(from, to0, to1, pos = NULL,
            label_from = NULL, label_to0 = NULL, label_to1 = NULL,
            pos_from = NULL, pos_to0 = NULL, pos_to1 = NULL,
            label_from_pos = NULL, label_to0_pos = NULL, label_to1_pos = NULL,
            label_from_gap = NULL, label_to0_gap = NULL, label_to1_gap = NULL,
            arr_width = NULL, ...) {
 
-    nearest <- ifelse(abs(to0$y - from$y) < abs(to1$y - from$y), to0, to1)
-    split <- node(calc_pos(from$y, nearest$y, pos),
-                  calc_pos(from$y0, from$y1, pos_from),
+    if (abs(to0$y - from$y) < abs(to1$y - from$y)) {
+      nearest <- to0
+    } else {
+      nearest <- to1
+    }
+
+    split <- node(calc_pos(from$x0, from$x1, pos_from),
+                  calc_pos(from$y, nearest$y, pos),
                   r = 0)
 
-    flow(from, split, label_from, label_pos = label_pos_from, arr_width = 0)
+    flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
+         ...)
     bendx(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
           label_to_gap = label_to0_gap, arr_width = arr_width, ...)
     bendx(split, to1, label_to = label_to1, label_to_pos = label_to1_pos,
