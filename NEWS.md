@@ -1,3 +1,8 @@
+# flodia 0.0.4
+
+* allow rectangular nodes
+* allow change to node label cex
+
 # flodia 0.0.3
 
 * add turn and split functions
