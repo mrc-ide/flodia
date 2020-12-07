@@ -17,6 +17,8 @@ based on plot dimensions)}
 \item{res}{resolution of plot default = 200 dpi}
 
 \item{oma}{single numeric outer margin of plot, default is 0.1}
+
+\item{...}{other arguments to png()}
 }
 \description{
 save a flodia

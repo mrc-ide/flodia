@@ -27,6 +27,7 @@ flodia <- function(f, oma = 0.1) {
 #'  based on plot dimensions)
 #' @param res resolution of plot default = 200 dpi
 #' @param oma single numeric outer margin of plot, default is 0.1
+#' @param ... other arguments to png()
 #' @export
 #' @importFrom grDevices png
 #' @importFrom grDevices dev.off

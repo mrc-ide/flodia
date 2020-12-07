@@ -41,11 +41,11 @@ node(
 
 \item{border}{colour of node border}
 
+\item{label_font}{label font, see par()}
+
 \item{label_col}{colour of lavel}
 
 \item{label_cex}{size of label text}
-
-\item{font}{label font, see par()}
 }
 \description{
 add a node

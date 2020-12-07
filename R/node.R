@@ -9,7 +9,7 @@
 #' @param y_root shift from y = 0 (default = 0)
 #' @param node_col colour of node
 #' @param border colour of node border
-#' @param font label font, see par()
+#' @param label_font label font, see par()
 #' @param label_col colour of lavel
 #' @param label_cex size of label text
 #' @importFrom graphics rect
