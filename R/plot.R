@@ -30,13 +30,13 @@ flodia <- function(f, oma = 0.1) {
 #' @export
 #' @importFrom grDevices png
 #' @importFrom grDevices dev.off
-flodia_png <- function(f, filepath, width = 1200, res = 200, oma = 0.1) {
+flodia_png <- function(f, filepath, width = 1200, res = 200, oma = 0.1, ...) {
 
   # extract co-ordinates of flow diagram
   z <- flodia_null(f)
 
   height <- round(width * (z$y1 - z$y0) / (z$x1 - z$x0))
-  png(filepath, width, height, res = res)
+  png(filepath, width, height, res = res, ...)
   flodia(f, oma)
   dev.off()
 }
@@ -46,6 +46,7 @@ flodia_png <- function(f, filepath, width = 1200, res = 200, oma = 0.1) {
 #' @param f flodia plot function
 #' @importFrom grDevices pdf
 #' @importFrom graphics plot.new
+#' @export
 flodia_null <- function(f) {
 
   pdf(NULL)
