@@ -4,7 +4,7 @@
 \alias{flodia_png}
 \title{save a flodia}
 \usage{
-flodia_png(f, filepath, width = 1200, res = 200, oma = 0.1)
+flodia_png(f, filepath, width = 1200, res = 200, oma = 0.1, ...)
 }
 \arguments{
 \item{f}{flodia plot function}
