@@ -33,9 +33,11 @@
 forkx <-
   function(from, to0, to1, pos = NULL,
            label_from = NULL, label_to0 = NULL, label_to1 = NULL,
-           pos_from = NULL, pos_to0 = NULL, pos_to1 = NULL,
-           label_from_pos = NULL, label_to0_pos = NULL, label_to1_pos = NULL,
-           label_from_gap = NULL, label_to0_gap = NULL, label_to1_gap = NULL,
+           pos_from = NULL, pos_to0 = NULL, pos_to1 = pos_to0,
+           label_from_pos = NULL,
+           label_to0_pos = label_from_pos, label_to1_pos = label_to0_pos,
+           label_from_gap = NULL,
+           label_to0_gap = label_from_gap, label_to1_gap = label_to0_gap,
            arr_width = NULL, ...) {
 
   if (abs(to0$x - from$x) < abs(to1$x - from$x)) {
@@ -48,7 +50,7 @@ forkx <-
                 r = 0)
 
   flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
-       ...)
+       label_gap = label_from_gap, ...)
   bendy(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
         label_to_gap = label_to0_gap, arr_width = arr_width, ...)
   bendy(split, to1, label_to = label_to1, label_to_pos = label_to1_pos,
@@ -96,9 +98,11 @@ forkx <-
 forky <-
   function(from, to0, to1, pos = NULL,
            label_from = NULL, label_to0 = NULL, label_to1 = NULL,
-           pos_from = NULL, pos_to0 = NULL, pos_to1 = NULL,
-           label_from_pos = NULL, label_to0_pos = NULL, label_to1_pos = NULL,
-           label_from_gap = NULL, label_to0_gap = NULL, label_to1_gap = NULL,
+           pos_from = NULL, pos_to0 = NULL, pos_to1 = pos_to0,
+           label_from_pos = NULL,
+           label_to0_pos = label_from_pos, label_to1_pos = label_to0_pos,
+           label_from_gap = NULL,
+           label_to0_gap = label_from_gap, label_to1_gap = label_to0_gap,
            arr_width = NULL, ...) {
 
     if (abs(to0$y - from$y) < abs(to1$y - from$y)) {
@@ -112,7 +116,7 @@ forky <-
                   r = 0)
 
     flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
-         ...)
+         label_gap = label_from_gap, ...)
     bendx(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
           label_to_gap = label_to0_gap, arr_width = arr_width, ...)
     bendx(split, to1, label_to = label_to1, label_to_pos = label_to1_pos,
