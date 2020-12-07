@@ -7,14 +7,17 @@
 node(
   x,
   y,
-  r,
+  r = 0.1,
   label = "",
+  rx = r,
+  ry = r,
   x_root = 0,
   y_root = 0,
   node_col = "grey80",
   border = "black",
-  font = 1,
-  label_col = "black"
+  label_font = 1,
+  label_col = "black",
+  label_cex = 1
 )
 }
 \arguments{
@@ -26,6 +29,10 @@ node(
 
 \item{label}{node label}
 
+\item{rx}{radius of node in x-direction}
+
+\item{ry}{radius of node in y-direction}
+
 \item{x_root}{shift from x = 0 (default = 0)}
 
 \item{y_root}{shift from y = 0 (default = 0)}
@@ -34,9 +41,11 @@ node(
 
 \item{border}{colour of node border}
 
-\item{font}{label font, see par()}
+\item{label_font}{label font, see par()}
 
-\item{label_col}{colour of}
+\item{label_col}{colour of lavel}
+
+\item{label_cex}{size of label text}
 }
 \description{
 add a node

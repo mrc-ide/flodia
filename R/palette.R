@@ -80,7 +80,7 @@ light_palette <- function(col) {
 #'@param col either an integer vector between 1 and 15 or a string of the
 #' following possible colour names: rd, or, oryl, yl, ylgn, gn, gnbu, bu, bupu,
 #'  pu, pupi, pi, gr
-#'  @export
+#'@export
 mid_palette <- function(col) {
   gp <- get_ghibli()
   palette <- c(rd = gp$SpiritedMedium[3], rdor = gp$MononokeMedium[5],

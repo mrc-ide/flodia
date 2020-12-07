@@ -15,7 +15,7 @@
 #' @param arr_type  type of arrow head to draw default = triangle
 #' @param arr_col colour of arrow default = black
 #' @param arr_length length of arrow head, defaults to 0.2
-#' @param arr_width width of arrow head, defaults to 0.15
+#' @param arr_width width of arrow head, defaults to 0.1
 #' @param arr_lty lty of arrow, defaults to 1
 #' @param ... additional formatting arguments to arrow()
 #' @return returns the start and end points of the flow
@@ -28,14 +28,14 @@ flow <- function(from, to, label = NULL,
                  label_gap = NULL, label_col = "black", label_font = 3,
                  label_cex = 0.8,
                  arr_type = "triangle", arr_col = "black",
-                 arr_length = 0.2, arr_width = NULL, arr_lty = 1,
+                 arr_length = 0.15, arr_width = NULL, arr_lty = 1,
                  ...) {
 
   label <- label %||% ""
   pos <- pos %||% 0.5
   label_pos <- label_pos %||% 0.5
   label_gap <- label_gap %||% 0.05
-  arr_width <- arr_width %||% 0.15
+  arr_width <- arr_width %||% 0.1
 
   x0 <- x1 <- calc_pos(from$x0, from$x1, pos)
   y0 <- y1 <- calc_pos(from$y0, from$y1, pos)

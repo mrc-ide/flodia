@@ -27,47 +27,47 @@
 <line x1='360.00' y1='265.78' x2='360.00' y2='65.78' style='stroke-width: 0.75;' />
 <text x='371.22' y='168.31' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='5.33px' lengthAdjust='spacingAndGlyphs'>a</text>
 <line x1='360.00' y1='65.78' x2='610.00' y2='65.78' style='stroke-width: 0.75;' />
-<polygon points='602.95,68.42 610.00,65.78 602.95,63.13 ' style='stroke-width: 0.00; fill: #000000;' />
+<polygon points='604.71,67.54 610.00,65.78 604.71,64.01 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='482.34' y='58.10' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='5.33px' lengthAdjust='spacingAndGlyphs'>b</text>
 <rect x='637.78' y='288.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='387.78' y1='288.00' x2='637.78' y2='288.00' style='stroke-width: 0.75;' />
 <text x='510.38' y='279.42' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='4.80px' lengthAdjust='spacingAndGlyphs'>c</text>
 <line x1='637.78' y1='288.00' x2='637.78' y2='88.00' style='stroke-width: 0.75;' />
-<polygon points='640.42,95.05 637.78,88.00 635.13,95.05 ' style='stroke-width: 0.00; fill: #000000;' />
+<polygon points='639.54,93.29 637.78,88.00 636.01,93.29 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='649.00' y='191.43' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='5.33px' lengthAdjust='spacingAndGlyphs'>d</text>
 <rect x='343.33' y='65.78' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='343.33' y1='265.78' x2='343.33' y2='65.78' style='stroke-width: 0.75;' />
 <text x='266.18' y='169.21' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='43.19px' lengthAdjust='spacingAndGlyphs'>left of flow</text>
 <line x1='343.33' y1='65.78' x2='110.00' y2='65.78' style='stroke-width: 0.75;' />
-<polygon points='117.05,63.13 110.00,65.78 117.05,68.42 ' style='stroke-width: 0.00; fill: #000000;' />
+<polygon points='115.29,64.01 110.00,65.78 115.29,67.54 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='204.29' y='80.32' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='44.75px' lengthAdjust='spacingAndGlyphs'>below flow</text>
 <rect x='82.22' y='279.11' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='332.22' y1='279.11' x2='82.22' y2='279.11' style='stroke-width: 0.75;' />
 <text x='232.46' y='271.43' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='49.53px' lengthAdjust='spacingAndGlyphs'>nearer from</text>
 <line x1='82.22' y1='279.11' x2='82.22' y2='88.00' style='stroke-width: 0.75;' />
-<polygon points='84.87,95.05 82.22,88.00 79.58,95.05 ' style='stroke-width: 0.00; fill: #000000;' />
+<polygon points='83.99,93.29 82.22,88.00 80.46,93.29 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='104.71' y='148.39' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='38.36px' lengthAdjust='spacingAndGlyphs'>nearer to</text>
 <rect x='376.67' y='492.44' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='376.67' y1='310.22' x2='376.67' y2='492.44' style='stroke-width: 0.75;' />
 <text x='396.44' y='404.44' style='font-size: 12.00px; font-style: italic; font-family: Liberation Sans;' textLength='16.02px' lengthAdjust='spacingAndGlyphs'>big</text>
 <line x1='376.67' y1='492.44' x2='610.00' y2='492.44' style='stroke-width: 0.75;' />
-<polygon points='602.95,497.73 610.00,492.44 602.95,487.15 ' style='stroke-width: 0.00; fill: #000000;' />
+<polygon points='604.71,497.73 610.00,492.44 604.71,487.15 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='464.32' y='485.62' style='font-size: 12.00px; font-style: italic; font-family: Liberation Sans;' textLength='58.03px' lengthAdjust='spacingAndGlyphs'>wide arrow</text>
 <rect x='660.00' y='305.78' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='387.78' y1='305.78' x2='660.00' y2='305.78' style='stroke-width: 0.75;' />
 <text x='501.52' y='297.15' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='44.73px' lengthAdjust='spacingAndGlyphs'>long arrow</text>
 <line x1='660.00' y1='305.78' x2='660.00' y2='488.00' style='stroke-width: 0.75;' />
-<polygon points='657.36,470.37 660.00,488.00 662.64,470.37 ' style='stroke-width: 0.00; fill: #000000;' />
+<polygon points='658.24,470.37 660.00,488.00 661.76,470.37 ' style='stroke-width: 0.00; fill: #000000;' />
 <rect x='360.00' y='510.22' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='360.00' y1='310.22' x2='360.00' y2='510.22' style='stroke-width: 0.75;' />
 <text x='318.91' y='412.71' style='font-size: 9.60px; font-style: italic; fill: #5C5992; font-family: Liberation Sans;' textLength='26.62px' lengthAdjust='spacingAndGlyphs'>purple</text>
 <line x1='360.00' y1='510.22' x2='110.00' y2='510.22' style='stroke-width: 0.75;' />
-<polygon points='117.05,507.58 110.00,510.22 117.05,512.87 ' style='stroke-width: 0.00; fill: #000000;' />
+<polygon points='115.29,508.46 110.00,510.22 115.29,511.99 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='221.69' y='501.60' style='font-size: 9.60px; font-style: italic; fill: #5C5992; font-family: Liberation Sans;' textLength='26.62px' lengthAdjust='spacingAndGlyphs'>purple</text>
 <rect x='82.22' y='288.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='332.22' y1='288.00' x2='82.22' y2='288.00' style='stroke-width: 0.75;' />
 <text x='182.71' y='301.57' style='font-size: 9.60px; font-weight: bold; fill: #58A449; font-family: Liberation Sans;' textLength='49.03px' lengthAdjust='spacingAndGlyphs'>green bold</text>
 <line x1='82.22' y1='288.00' x2='82.22' y2='488.00' style='stroke-width: 0.75;' />
-<polygon points='79.58,480.95 82.22,488.00 84.87,480.95 ' style='stroke-width: 0.00; fill: #000000;' />
+<polygon points='80.46,482.71 82.22,488.00 83.99,482.71 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='113.26' y='390.46' style='font-size: 9.60px; font-weight: bold; fill: #58A449; font-family: Liberation Sans;' textLength='49.03px' lengthAdjust='spacingAndGlyphs'>green bold</text>
 </svg>

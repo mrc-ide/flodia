@@ -14,13 +14,13 @@ forky(
   label_to1 = NULL,
   pos_from = NULL,
   pos_to0 = NULL,
-  pos_to1 = NULL,
+  pos_to1 = pos_to0,
   label_from_pos = NULL,
-  label_to0_pos = NULL,
-  label_to1_pos = NULL,
+  label_to0_pos = label_from_pos,
+  label_to1_pos = label_to0_pos,
   label_from_gap = NULL,
-  label_to0_gap = NULL,
-  label_to1_gap = NULL,
+  label_to0_gap = label_from_gap,
+  label_to1_gap = label_to0_gap,
   arr_width = NULL,
   ...
 )
