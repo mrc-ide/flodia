@@ -40,22 +40,29 @@ flow <- function(from, to, label = NULL,
   x0 <- x1 <- calc_pos(from$x0, from$x1, pos)
   y0 <- y1 <- calc_pos(from$y0, from$y1, pos)
 
+  name_from <- deparse(substitute(from))
+  name_to  <- deparse(substitute(to))
+
   if (from$y0 > to$y1) { # down
+    assert_xoverlap(from, to, name_from, name_to)
     y0 <- from$y0
     y1 <- to$y1
     x <- x0 + label_gap
     y <- calc_pos(from$y0, to$y1, label_pos)
   } else if (from$x0 > to$x1) { # left
+    assert_yoverlap(from, to, name_from, name_to)
     x0 <- from$x0
     x1 <- to$x1
     x <- calc_pos(from$x0, to$x1, label_pos)
     y <- y0 + label_gap
   } else if (from$y1 < to$y0) { # up
+    assert_xoverlap(from, to, name_from, name_to)
     y0 <- from$y1
     y1 <- to$y0
     x <- x0 + label_gap
     y <- calc_pos(from$y1, to$y0, label_pos)
   } else if (from$x1 < to$x0) { # right
+    assert_yoverlap(from, to, name_from, name_to)
     x0 <- from$x1
     x1 <- to$x0
     x <- calc_pos(from$x1, to$x0, label_pos)
