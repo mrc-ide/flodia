@@ -1,3 +1,9 @@
+# flodia 0.0.5
+
+* add informative error messages, ensuring connected nodes overlap in either x-
+or y- direction
+* ensure that flows remain within the x-/y- interval over which nodes overlap
+
 # flodia 0.0.4
 
 * allow rectangular nodes
