@@ -3,8 +3,9 @@
 #' @param from start node
 #' @param to end node
 #' @param label label to draw on flow
-#' @param pos a decimal between 0 and 1 giving the position to depart from the
-#' start node, where 0 = bottom / left and 1 = top/right
+#' @param pos a decimal between 0 and 1 giving the position of the flow relative
+#' to the nodes. Where 0 = bottom/left and 1 = top/right of the
+#' interval over which the nodes overlap.
 #' @param label_pos a decimal between 0 and 1 giving the position along the flow
 #' to draw the label, where 0 = bottom / left and 1 = top/right
 #' @param label_gap distance from the flow at which to draw the label,
@@ -37,9 +38,6 @@ flow <- function(from, to, label = NULL,
   label_gap <- label_gap %||% 0.05
   arr_width <- arr_width %||% 0.1
 
-  x0 <- x1 <- calc_pos(from$x0, from$x1, pos)
-  y0 <- y1 <- calc_pos(from$y0, from$y1, pos)
-
   name_from <- deparse(substitute(from))
   name_to  <- deparse(substitute(to))
 
@@ -47,24 +45,32 @@ flow <- function(from, to, label = NULL,
     assert_xoverlap(from, to, name_from, name_to)
     y0 <- from$y0
     y1 <- to$y1
+    overlap <- xoverlap(from, to)
+    x0 <- x1 <- calc_pos(overlap$x0, overlap$x1, pos)
     x <- x0 + label_gap
     y <- calc_pos(from$y0, to$y1, label_pos)
   } else if (from$x0 > to$x1) { # left
     assert_yoverlap(from, to, name_from, name_to)
     x0 <- from$x0
     x1 <- to$x1
+    overlap <- yoverlap(from, to)
+    y0 <- y1 <- calc_pos(overlap$y0, overlap$y1, pos)
     x <- calc_pos(from$x0, to$x1, label_pos)
     y <- y0 + label_gap
   } else if (from$y1 < to$y0) { # up
     assert_xoverlap(from, to, name_from, name_to)
     y0 <- from$y1
     y1 <- to$y0
+    overlap <- xoverlap(from, to)
+    x0 <- x1 <- calc_pos(overlap$x0, overlap$x1, pos)
     x <- x0 + label_gap
     y <- calc_pos(from$y1, to$y0, label_pos)
   } else if (from$x1 < to$x0) { # right
     assert_yoverlap(from, to, name_from, name_to)
     x0 <- from$x1
     x1 <- to$x0
+    overlap <- yoverlap(from, to)
+    y0 <- y1 <- calc_pos(overlap$y0, overlap$y1, pos)
     x <- calc_pos(from$x1, to$x0, label_pos)
     y <- y0 + label_gap
   }
