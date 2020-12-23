@@ -12,7 +12,7 @@
 #' default = 0.1
 #' @param label_col colour of label, defaults to black
 #' @param label_font font of label, defaults to 3
-#' @param label_cex label cex, defualts to 0.8
+#' @param label_cex label cex, defaults to 0.8
 #' @param arr_type  type of arrow head to draw default = triangle
 #' @param arr_col colour of arrow default = black
 #' @param arr_length length of arrow head, defaults to 0.2

@@ -43,7 +43,7 @@ default = 0.1}
 
 \item{label_font}{font of label, defaults to 3}
 
-\item{label_cex}{label cex, defualts to 0.8}
+\item{label_cex}{label cex, defaults to 0.8}
 
 \item{arr_type}{type of arrow head to draw default = triangle}
 
