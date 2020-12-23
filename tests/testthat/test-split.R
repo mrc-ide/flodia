@@ -1,4 +1,4 @@
-context("forks")
+context("split")
 
 split <- function() {
   r <- 0.1

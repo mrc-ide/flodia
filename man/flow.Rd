@@ -29,8 +29,9 @@ flow(
 
 \item{label}{label to draw on flow}
 
-\item{pos}{a decimal between 0 and 1 giving the position to depart from the
-start node, where 0 = bottom / left and 1 = top/right}
+\item{pos}{a decimal between 0 and 1 giving the position of the flow relative
+to the nodes. Where 0 = bottom/left and 1 = top/right of the
+interval over which the nodes overlap.}
 
 \item{label_pos}{a decimal between 0 and 1 giving the position along the flow
 to draw the label, where 0 = bottom / left and 1 = top/right}
@@ -42,7 +43,7 @@ default = 0.1}
 
 \item{label_font}{font of label, defaults to 3}
 
-\item{label_cex}{label cex, defualts to 0.8}
+\item{label_cex}{label cex, defaults to 0.8}
 
 \item{arr_type}{type of arrow head to draw default = triangle}
 
