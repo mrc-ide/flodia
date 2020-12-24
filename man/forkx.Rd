@@ -21,6 +21,12 @@ forkx(
   label_from_gap = NULL,
   label_to0_gap = label_from_gap,
   label_to1_gap = label_to0_gap,
+  label_from_x = NULL,
+  label_to0_x = NULL,
+  label_to1_x = label_to0_x,
+  label_from_y = NULL,
+  label_to0_y = NULL,
+  label_to1_y = NULL,
   arr_width = NULL,
   ...
 )
@@ -67,6 +73,24 @@ flow into \code{to1} to draw \code{label_to1}, where 0 = start and 1 = end}
 
 \item{label_to1_gap}{distance from the flow into \code{to1} at which to draw
 \code{label_to1} default = 0.05}
+
+\item{label_from_x}{x co-ordinate of \code{label_from} position, overrides use of
+\code{label_from_pos} and / or \code{label_from_gap}}
+
+\item{label_to0_x}{x co-ordinate of \code{label_to0} position, overrides use of
+\code{label_to0_pos} and / or \code{label_to0_gap}}
+
+\item{label_to1_x}{x co-ordinate of \code{label_to1} position, overrides use of
+\code{label_to1_pos} and / or \code{label_to1_gap}}
+
+\item{label_from_y}{y co-ordinate of \code{label_from} position, overrides use of
+\code{label_from_pos} and / or \code{label_from_gap}}
+
+\item{label_to0_y}{y co-ordinate of \code{label_to0} position, overrides use of
+\code{label_to0_pos} and / or \code{label_to0_gap}}
+
+\item{label_to1_y}{y co-ordinate of \code{label_to1} position, overrides use of
+\code{label_to1_pos} and / or \code{label_to1_gap}}
 
 \item{arr_width}{width of arrow, defaults to same as \code{\link[=flow]{flow()}}}
 

@@ -11,6 +11,8 @@ flow(
   pos = NULL,
   label_pos = NULL,
   label_gap = NULL,
+  label_x = NULL,
+  label_y = NULL,
   label_col = "black",
   label_font = 3,
   label_cex = 0.8,
@@ -38,6 +40,12 @@ to draw the label, where 0 = bottom / left and 1 = top/right}
 
 \item{label_gap}{distance from the flow at which to draw the label,
 default = 0.1}
+
+\item{label_x}{x co-ordinate of label position, overrides use of label_pos
+and / or label_gap}
+
+\item{label_y}{y co-ordinate of label position, overrides use of label_pos
+and / or label_gap}
 
 \item{label_col}{colour of label, defaults to black}
 
