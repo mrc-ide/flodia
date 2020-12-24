@@ -65,7 +65,7 @@ forkx <-
 
   flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
        label_gap = label_from_gap, label_x = label_from_x,
-       label_y = label_from_y,...)
+       label_y = label_from_y, ...)
   bendy(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
         label_to_gap = label_to0_gap, label_to_x = label_to0_x,
         label_to_y = label_to0_y, arr_width = arr_width, ...)
@@ -148,7 +148,7 @@ forky <-
 
     flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
          label_gap = label_from_gap, label_x = label_from_x,
-         label_y = label_from_y,...)
+         label_y = label_from_y, ...)
     bendx(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
           label_to_gap = label_to0_gap, label_to_x = label_to0_x,
           label_to_y = label_to0_y, arr_width = arr_width, ...)
