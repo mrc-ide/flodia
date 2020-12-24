@@ -26,6 +26,18 @@
 #'  `label_to0` default = 0.05
 #' @param label_to1_gap distance from the flow into `to1` at which to draw
 #'  `label_to1` default = 0.05
+#'@param label_from_x x co-ordinate of `label_from` position, overrides use of
+#' `label_from_pos` and / or `label_from_gap`
+#'@param label_from_y y co-ordinate of `label_from` position, overrides use of
+#' `label_from_pos` and / or `label_from_gap`
+#'@param label_to0_x x co-ordinate of `label_to0` position, overrides use of
+#' `label_to0_pos` and / or `label_to0_gap`
+#'@param label_to0_y y co-ordinate of `label_to0` position, overrides use of
+#' `label_to0_pos` and / or `label_to0_gap`
+#'@param label_to1_x x co-ordinate of `label_to1` position, overrides use of
+#' `label_to1_pos` and / or `label_to1_gap`
+#'@param label_to1_y y co-ordinate of `label_to1` position, overrides use of
+#' `label_to1_pos` and / or `label_to1_gap`
 #' @param arr_width width of arrow, defaults to same as [flow()]
 #' @param ... additional formatting arguments to [flow()]
 #' @return returns the start and end points of the flow
@@ -38,6 +50,8 @@ forkx <-
            label_to0_pos = label_from_pos, label_to1_pos = label_to0_pos,
            label_from_gap = NULL,
            label_to0_gap = label_from_gap, label_to1_gap = label_to0_gap,
+           label_from_x = NULL, label_to0_x = NULL, label_to1_x = label_to0_x,
+           label_from_y = NULL, label_to0_y = NULL, label_to1_y = NULL,
            arr_width = NULL, ...) {
 
   if (abs(to0$x - from$x) < abs(to1$x - from$x)) {
@@ -50,11 +64,14 @@ forkx <-
                 r = 0)
 
   flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
-       label_gap = label_from_gap, ...)
+       label_gap = label_from_gap, label_x = label_from_x,
+       label_y = label_from_y,...)
   bendy(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
-        label_to_gap = label_to0_gap, arr_width = arr_width, ...)
+        label_to_gap = label_to0_gap, label_to_x = label_to0_x,
+        label_to_y = label_to0_y, arr_width = arr_width, ...)
   bendy(split, to1, label_to = label_to1, label_to_pos = label_to1_pos,
-        label_to_gap = label_to1_gap, arr_width = arr_width, ...)
+        label_to_gap = label_to1_gap, label_to_x = label_to1_x,
+        label_to_y = label_to1_y, arr_width = arr_width, ...)
 
   list(x0 = min(from$x0, to0$x0, to1$x0),
        y0 = min(from$y0, to0$y0, to1$y0),
@@ -91,6 +108,18 @@ forkx <-
 #'  `label_to0` default = 0.05
 #' @param label_to1_gap distance from the flow into `to1` at which to draw
 #'  `label_to1` default = 0.05
+#'@param label_from_x x co-ordinate of `label_from` position, overrides use of
+#' `label_from_pos` and / or `label_from_gap`
+#'@param label_from_y y co-ordinate of `label_from` position, overrides use of
+#' `label_from_pos` and / or `label_from_gap`
+#'@param label_to0_x x co-ordinate of `label_to0` position, overrides use of
+#' `label_to0_pos` and / or `label_to0_gap`
+#'@param label_to0_y y co-ordinate of `label_to0` position, overrides use of
+#' `label_to0_pos` and / or `label_to0_gap`
+#'@param label_to1_x x co-ordinate of `label_to1` position, overrides use of
+#' `label_to1_pos` and / or `label_to1_gap`
+#'@param label_to1_y y co-ordinate of `label_to1` position, overrides use of
+#' `label_to1_pos` and / or `label_to1_gap`
 #' @param arr_width width of arrow, defaults to same as [flow()]
 #' @param ... additional formatting arguments to [flow()]
 #' @return returns the start and end points of the flow
@@ -103,6 +132,8 @@ forky <-
            label_to0_pos = label_from_pos, label_to1_pos = label_to0_pos,
            label_from_gap = NULL,
            label_to0_gap = label_from_gap, label_to1_gap = label_to0_gap,
+           label_from_x = NULL, label_to0_x = NULL, label_to1_x = NULL,
+           label_from_y = NULL, label_to0_y = NULL, label_to1_y = label_to0_y,
            arr_width = NULL, ...) {
 
     if (abs(to0$y - from$y) < abs(to1$y - from$y)) {
@@ -116,11 +147,14 @@ forky <-
                   r = 0)
 
     flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
-         label_gap = label_from_gap, ...)
+         label_gap = label_from_gap, label_x = label_from_x,
+         label_y = label_from_y,...)
     bendx(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
-          label_to_gap = label_to0_gap, arr_width = arr_width, ...)
+          label_to_gap = label_to0_gap, label_to_x = label_to0_x,
+          label_to_y = label_to0_y, arr_width = arr_width, ...)
     bendx(split, to1, label_to = label_to1, label_to_pos = label_to1_pos,
-          label_to_gap = label_to1_gap, arr_width = arr_width, ...)
+          label_to_gap = label_to1_gap, label_to_x = label_to1_x,
+          label_to_y = label_to1_y, arr_width = arr_width, ...)
 
     list(x0 = min(from$x0, to0$x0, to1$x0),
          y0 = min(from$y0, to0$y0, to1$y0),

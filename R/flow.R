@@ -10,6 +10,10 @@
 #' to draw the label, where 0 = bottom / left and 1 = top/right
 #' @param label_gap distance from the flow at which to draw the label,
 #' default = 0.1
+#' @param label_x x co-ordinate of label position, overrides use of label_pos
+#' and / or label_gap
+#' @param label_y y co-ordinate of label position, overrides use of label_pos
+#' and / or label_gap
 #' @param label_col colour of label, defaults to black
 #' @param label_font font of label, defaults to 3
 #' @param label_cex label cex, defaults to 0.8
@@ -26,7 +30,8 @@
 #' @export
 flow <- function(from, to, label = NULL,
                  pos = NULL, label_pos = NULL,
-                 label_gap = NULL, label_col = "black", label_font = 3,
+                 label_gap = NULL, label_x = NULL, label_y = NULL,
+                 label_col = "black", label_font = 3,
                  label_cex = 0.8,
                  arr_type = "triangle", arr_col = "black",
                  arr_length = 0.15, arr_width = NULL, arr_lty = 1,
@@ -47,32 +52,32 @@ flow <- function(from, to, label = NULL,
     y1 <- to$y1
     overlap <- xoverlap(from, to)
     x0 <- x1 <- calc_pos(overlap$x0, overlap$x1, pos)
-    x <- x0 + label_gap
-    y <- calc_pos(from$y0, to$y1, label_pos)
+    x <- label_x %||% (x0 + label_gap)
+    y <- label_y %||% calc_pos(from$y0, to$y1, label_pos)
   } else if (from$x0 > to$x1) { # left
     assert_yoverlap(from, to, name_from, name_to)
     x0 <- from$x0
     x1 <- to$x1
     overlap <- yoverlap(from, to)
     y0 <- y1 <- calc_pos(overlap$y0, overlap$y1, pos)
-    x <- calc_pos(from$x0, to$x1, label_pos)
-    y <- y0 + label_gap
+    x <- label_x %||% calc_pos(from$x0, to$x1, label_pos)
+    y <- label_y %||% (y0 + label_gap)
   } else if (from$y1 < to$y0) { # up
     assert_xoverlap(from, to, name_from, name_to)
     y0 <- from$y1
     y1 <- to$y0
     overlap <- xoverlap(from, to)
     x0 <- x1 <- calc_pos(overlap$x0, overlap$x1, pos)
-    x <- x0 + label_gap
-    y <- calc_pos(from$y1, to$y0, label_pos)
+    x <- label_x %||% (x0 + label_gap)
+    y <- label_y %||% calc_pos(from$y1, to$y0, label_pos)
   } else if (from$x1 < to$x0) { # right
     assert_yoverlap(from, to, name_from, name_to)
     x0 <- from$x1
     x1 <- to$x0
     overlap <- yoverlap(from, to)
     y0 <- y1 <- calc_pos(overlap$y0, overlap$y1, pos)
-    x <- calc_pos(from$x1, to$x0, label_pos)
-    y <- y0 + label_gap
+    x <- label_x %||% calc_pos(from$x1, to$x0, label_pos)
+    y <- label_y %||% (y0 + label_gap)
   }
 
   segments(x0, y0, x1, y1, lty = arr_lty, col = arr_col, ...)
@@ -87,7 +92,7 @@ flow <- function(from, to, label = NULL,
   }
 
   text(x, y, labels = label, font = label_font, cex = label_cex,
-       col = label_col)
+       col = label_col, adj = 0.5)
   list(x = calc_pos(x0, x1), y = calc_pos(y0, y1),
        x0 = x0, y0 = y0, x1 = x1, y1 = y1)
 }
