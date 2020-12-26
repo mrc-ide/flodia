@@ -15,5 +15,6 @@ test_that("flow works as expected", {
   expect_error(si(0, 0, 1, -1), "s and i must overlap in the x direction")
   expect_error(si(0, 0, -1, -1), "s and i must overlap in the x direction")
   expect_error(si(0, 0, -1, 1), "s and i must overlap in the y direction")
+  expect_error(si(0, 0, 0.1, 0.1), "s and i must not intersect")
   dev.off()
 })
