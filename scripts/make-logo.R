@@ -1,8 +1,8 @@
 logo <- function() {
   r <- 0.02
-  aw <- 0.15
-  xgap <- 0.1
-  ygap <- 0.1
+  aw <- 0.1
+  xgap <- 0.06
+  ygap <- 0.07
 
   f <- node(0, 1, r, "F", node_col = light_palette("bupu"))
   l <- node(f$x + xgap, f$y, r, "L", node_col = light_palette("ylgn"))
@@ -20,6 +20,7 @@ logo <- function() {
   list(x0 = f$x0, x1 = o$x1, y0 = d$y0, y1 = f$y1)
 }
 
-flodia_png(logo, "scripts/logo.png", width = 600, res = 120)
+flodia_png(logo, "scripts/logo.png", width = 1200, res = 600,
+           oma = 0.01)
 
 
