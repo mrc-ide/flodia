@@ -1,6 +1,8 @@
 # flodia 0.0.6
 
 * allow exact x/y positioning of flow labels
+* add logo
+* fix bug distorting aspect ratio for rectangular plots
 
 # flodia 0.0.5
 
