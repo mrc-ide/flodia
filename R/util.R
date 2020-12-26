@@ -54,3 +54,13 @@ assert_yoverlap <- function(node0, node1,
     stop(sprintf("%s and %s must overlap in the y direction", name0, name1))
   }
 }
+
+assert_no_intersect <- function(node0, node1,
+                            name0 = deparse(substitute(node0)),
+                            name1 = deparse(substitute(node1))) {
+  x <- xoverlap(node0, node1)
+  y <- yoverlap(node0, node1)
+  if ((length(x) > 1) & (length(y) > 1)) {
+    stop(sprintf("%s and %s must not intersect", name0, name1))
+  }
+}

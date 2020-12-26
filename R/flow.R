@@ -37,6 +37,7 @@ flow <- function(from, to, label = NULL,
                  arr_length = 0.15, arr_width = NULL, arr_lty = 1,
                  ...) {
 
+
   label <- label %||% ""
   pos <- pos %||% 0.5
   label_pos <- label_pos %||% 0.5
@@ -45,6 +46,7 @@ flow <- function(from, to, label = NULL,
 
   name_from <- deparse(substitute(from))
   name_to  <- deparse(substitute(to))
+  assert_no_intersect(from, to, name_from, name_to)
 
   if (from$y0 > to$y1) { # down
     assert_xoverlap(from, to, name_from, name_to)
