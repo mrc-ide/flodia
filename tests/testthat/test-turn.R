@@ -1,5 +1,4 @@
-context("turn")
-
+test_that("turnx and turny work as expected", {
   sis <- function() {
     r <- 0.1
     s <- node(0, 0, r, label = "S[1]")
@@ -24,4 +23,5 @@ context("turn")
     list(x0 = left, x1 = right, y0 = bottom, y1 = top)
   }
 
-vdiffr::expect_doppelganger("SIS diagram", fig = function() flodia(sis))
+  vdiffr::expect_doppelganger("SIS diagram", fig = function() flodia(sis))
+})
