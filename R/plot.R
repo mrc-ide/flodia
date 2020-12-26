@@ -5,19 +5,18 @@
 #' @export
 flodia <- function(f, oma = 0.1) {
 
-  z <- flodia_null(f)
-  xlim <- c(z$x0 - oma, z$x1 + oma)
-  ylim <- c(z$y0 - oma, z$y1 + oma)
+  z <- flodia_null(f, oma)
 
   withr::with_par(new = list(mar = rep(0, 4), mgp = rep(0, 3), bty = "n",
                              oma = rep(0, 4)),
                   code = {
-                    plot(0, 0, type = "n", xlim = xlim, ylim = ylim,
+                    plot(0, 0, type = "n", xlim = c(z$x0, z$x1),
+                         ylim = c(z$y0, z$y1),
                          axes = FALSE)
                     f()
                   })
 
-  list(x0 = xlim[1], y0 = ylim[1], x1 = xlim[2], y1 = ylim[2])
+  z
 }
 
 #' @title save a flodia
@@ -34,7 +33,7 @@ flodia <- function(f, oma = 0.1) {
 flodia_png <- function(f, filepath, width = 1200, res = 200, oma = 0.1, ...) {
 
   # extract co-ordinates of flow diagram
-  z <- flodia_null(f)
+  z <- flodia_null(f, oma)
 
   height <- round(width * (z$y1 - z$y0) / (z$x1 - z$x0))
   png(filepath, width, height, res = res, ...)
@@ -45,15 +44,21 @@ flodia_png <- function(f, filepath, width = 1200, res = 200, oma = 0.1, ...) {
 
 #' @title run a flodia without plotting (e.g to extract co-ordinates)
 #' @param f flodia plot function
+#' @param oma single numeric outer margin of plot, default is 0.1
 #' @importFrom grDevices pdf
 #' @importFrom graphics plot.new
 #' @export
-flodia_null <- function(f) {
+flodia_null <- function(f, oma = 0.1) {
 
   pdf(NULL)
   plot.new()
   z <- f()
   dev.off()
+
+  z$x0 <- z$x0 - oma
+  z$x1 <- z$x1 + oma
+  z$y0 <- z$y0 - oma
+  z$y1 <- z$y1 + oma
 
   z
 }
