@@ -4,10 +4,12 @@
 \alias{flodia_null}
 \title{run a flodia without plotting (e.g to extract co-ordinates)}
 \usage{
-flodia_null(f)
+flodia_null(f, oma = 0.1)
 }
 \arguments{
 \item{f}{flodia plot function}
+
+\item{oma}{single numeric outer margin of plot, default is 0.1}
 }
 \description{
 run a flodia without plotting (e.g to extract co-ordinates)

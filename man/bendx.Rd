@@ -15,6 +15,10 @@ bendx(
   label_to_pos = NULL,
   label_from_gap = NULL,
   label_to_gap = NULL,
+  label_from_x = NULL,
+  label_to_x = NULL,
+  label_from_y = NULL,
+  label_to_y = NULL,
   arr_width = NULL,
   ...
 )
@@ -45,6 +49,18 @@ flow into \code{to} to draw \code{label_to}, where 0 = start and 1 = end}
 
 \item{label_to_gap}{distance from the flow into \code{to} at which to draw
 \code{label_to} default = 0.05}
+
+\item{label_from_x}{x co-ordinate of \code{label_from} position, overrides use of
+\code{label_from_pos} and / or \code{label_from_gap}}
+
+\item{label_to_x}{x co-ordinate of \code{label_to} position, overrides use of
+\code{label_to_pos} and / or \code{label_to_gap}}
+
+\item{label_from_y}{y co-ordinate of \code{label_from} position, overrides use of
+\code{label_from_pos} and / or \code{label_from_gap}}
+
+\item{label_to_y}{y co-ordinate of \code{label_to} position, overrides use of
+\code{label_to_pos} and / or \code{label_to_gap}}
 
 \item{arr_width}{width of arrow, defaults to same as \code{\link[=flow]{flow()}}}
 
