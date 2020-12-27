@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>mid palette — mid_palette • flodia</title>
+<title>add inflow to a node, in direction x — inflowx • flodia</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="mid palette — mid_palette" />
-<meta property="og:description" content="mid palette" />
+<meta property="og:title" content="add inflow to a node, in direction x — inflowx" />
+<meta property="og:description" content="add inflow to a node, in direction x" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,28 +119,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>mid palette</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mrc-ide/flodia/blob/master/R/palette.R'><code>R/palette.R</code></a></small>
-    <div class="hidden name"><code>mid_palette.Rd</code></div>
+    <h1>add inflow to a node, in direction x</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mrc-ide/flodia/blob/master/R/inflow.R'><code>R/inflow.R</code></a></small>
+    <div class="hidden name"><code>inflowx.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>mid palette</p>
+    <p>add inflow to a node, in direction x</p>
     </div>
 
-    <pre class="usage"><span class='fu'>mid_palette</span><span class='op'>(</span><span class='va'>col</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>inflowx</span><span class='op'>(</span><span class='va'>to</span>, <span class='va'>length</span>, pos <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>col</th>
-      <td><p>either an integer vector between 1 and 15 or a string of the
-following possible colour names: rd, or, oryl, yl, ylgn, gn, gnbu, bu, bupu,
-pu, pupi, pi, gr</p></td>
+      <th>to</th>
+      <td><p>end node</p></td>
+    </tr>
+    <tr>
+      <th>length</th>
+      <td><p>single numeric specifying length, positive will result in a
+flow from left to right, negative from right to left</p></td>
+    </tr>
+    <tr>
+      <th>pos</th>
+      <td><p>a decimal between 0 and 1 giving the position to attach the
+flow to node <code>to</code>, where 0 = bottom and 1 = top, default = 0.5</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>additional formatting arguments to <code><a href='flow.html'>flow()</a></code></p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>returns the start and end points of the flow</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
