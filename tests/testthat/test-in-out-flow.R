@@ -35,6 +35,6 @@ test_that("inflow and outflow work as expected", {
     list(x0 = finxlr$x0, x1 = finxrl$x1, y0 = finybt$y0, y1 = finytb$y1)
   }
 
-  vdiffr::expect_doppelganger("in-out-flow-diagram",
+  vdiffr::expect_doppelganger("in out flow diagram",
                               fig = function() flodia(inout))
 })
