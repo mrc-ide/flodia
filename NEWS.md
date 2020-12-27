@@ -1,3 +1,8 @@
+# flodia 0.0.7
+
+* add inflow / outflow functions
+* fix bug in label positioning
+
 # flodia 0.0.6
 
 * allow exact x/y positioning of flow labels

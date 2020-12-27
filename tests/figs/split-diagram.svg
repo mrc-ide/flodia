@@ -44,7 +44,7 @@
 <text x='645.00' y='257.92' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='13.33px' lengthAdjust='spacingAndGlyphs'>to1</text>
 <rect x='82.22' y='288.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='332.22' y1='288.00' x2='82.22' y2='288.00' style='stroke-width: 0.75;' />
-<text x='268.38' y='279.42' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='27.69px' lengthAdjust='spacingAndGlyphs'>nearer</text>
+<text x='118.38' y='279.42' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='27.69px' lengthAdjust='spacingAndGlyphs'>nearer</text>
 <line x1='82.22' y1='288.00' x2='82.22' y2='354.67' style='stroke-width: 0.75;' />
 <polygon points='80.46,349.38 82.22,354.67 83.99,349.38 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='61.93' y='324.76' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='12.80px' lengthAdjust='spacingAndGlyphs'>left</text>

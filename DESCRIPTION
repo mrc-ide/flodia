@@ -1,6 +1,6 @@
 Package: flodia
 Title: Flow Diagrams for Compartmental Models
-Version: 0.0.6
+Version: 0.0.7
 Authors@R: 
     c(person(given = "Lilith",
              family = "Whittles",

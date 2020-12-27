@@ -43,7 +43,7 @@
 <text x='204.29' y='80.32' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='44.75px' lengthAdjust='spacingAndGlyphs'>below flow</text>
 <rect x='82.22' y='279.11' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='332.22' y1='279.11' x2='82.22' y2='279.11' style='stroke-width: 0.75;' />
-<text x='232.46' y='271.43' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='49.53px' lengthAdjust='spacingAndGlyphs'>nearer from</text>
+<text x='132.46' y='271.43' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='49.53px' lengthAdjust='spacingAndGlyphs'>nearer from</text>
 <line x1='82.22' y1='279.11' x2='82.22' y2='88.00' style='stroke-width: 0.75;' />
 <polygon points='83.99,93.29 82.22,88.00 80.46,93.29 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='104.71' y='148.39' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='38.36px' lengthAdjust='spacingAndGlyphs'>nearer to</text>

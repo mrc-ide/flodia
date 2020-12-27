@@ -11,7 +11,7 @@ calc_pos(x0, x1, pos = NULL)
 
 \item{x1}{second point}
 
-\item{pos}{distance (between 0, 1) from first point, defaults to 0.5}
+\item{pos}{distance (between 0, 1) from left / bottom point, defaults to 0.5}
 }
 \description{
 calculates the weighted mean point between two points
