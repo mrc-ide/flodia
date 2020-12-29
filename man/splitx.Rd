@@ -5,9 +5,10 @@
 \title{add split between three nodes, in the x-direction}
 \usage{
 splitx(
-  from,
+  from = NULL,
   to0,
   to1,
+  length = NULL,
   label_from = NULL,
   label_to0 = NULL,
   label_to1 = NULL,
@@ -38,6 +39,10 @@ splitx(
 \item{to0}{the bottom end node}
 
 \item{to1}{the top end node}
+
+\item{length}{single numeric specifying length, positive will result in a
+fork from left to right, negative from right to left. Optional parameter
+replacing \code{from}}
 
 \item{label_from}{label to draw on the flow out of \code{from}}
 

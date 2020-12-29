@@ -3,6 +3,9 @@
 #' @param from start node
 #' @param to0 the bottom end node
 #' @param to1 the top end node
+#' @param length single numeric specifying length, positive will result in a
+#' fork from left to right, negative from right to left. Optional parameter
+#' replacing `from`
 #' @param label_from label to draw on the flow out of `from`
 #' @param label_to0 label to draw on the flow into `to0`
 #' @param label_to1 label to draw on the flow into `to1`
@@ -42,7 +45,7 @@
 #' @return returns the start and end points of the flow
 #' @export
 splitx <-
-  function(from, to0, to1,
+  function(from = NULL, to0, to1, length = NULL,
            label_from = NULL, label_to0 = NULL, label_to1 = NULL,
            pos_from = NULL, pos_to = NULL,
            label_from_pos = NULL, label_to0_pos = NULL, label_to1_pos = NULL,
@@ -54,10 +57,17 @@ splitx <-
            name_to0 = deparse(substitute(to0)),
            name_to1 = deparse(substitute(to1)), ...) {
 
+    check_flow_args(to0, from, length)
+    check_flow_args(to1, from, length)
     assert_xoverlap(to0, to1, name_to0, name_to1)
     assert_no_intersect(to0, to1, name_to0, name_to1)
 
     overlap <- xoverlap(to0, to1)
+    if (length(from) == 0) { # specify based on length
+      x <- ifelse(length > 0, overlap$x0, overlap$x1) - length
+      from <- node(x, calc_pos(to0$y, to1$y, pos_from), r = 0)
+    }
+
     split <- node(calc_pos(overlap$x0, overlap$x1, pos_to),
                   calc_pos(from$y0, from$y1, pos_from),
                   r = 0)
@@ -91,6 +101,9 @@ splitx <-
 #' @param from start node
 #' @param to0 the left end node
 #' @param to1 the right end node
+#' @param length single numeric specifying length, positive will result in a
+#' fork from bottom to top, negative from top to bottom. Optional parameter
+#' replacing `from`
 #' @param label_from label to draw on the flow out of `from`
 #' @param label_to0 label to draw on the flow into `to0`
 #' @param label_to1 label to draw on the flow into `to1`
@@ -130,7 +143,7 @@ splitx <-
 #' @return returns the start and end points of the flow
 #' @export
 splity <-
-  function(from, to0, to1,
+  function(from = NULL, to0, to1, length = NULL,
            label_from = NULL, label_to0 = NULL, label_to1 = NULL,
            pos_from = NULL, pos_to = NULL,
            label_from_pos = NULL, label_to0_pos = NULL, label_to1_pos = NULL,
@@ -142,10 +155,17 @@ splity <-
            name_to0 = deparse(substitute(to0)),
            name_to1 = deparse(substitute(to1)), ...) {
 
+    check_flow_args(to0, from, length)
+    check_flow_args(to1, from, length)
     assert_yoverlap(to0, to1, name_to0, name_to1)
     assert_no_intersect(to0, to1, name_to0, name_to1)
 
     overlap <- yoverlap(to0, to1)
+    if (length(from) == 0) { # specify based on length
+      y <- ifelse(length > 0, overlap$y0, overlap$y1) - length
+      from <- node(calc_pos(to0$x, to1$x, pos_from), y, r = 0)
+    }
+
     split <- node(calc_pos(from$x0, from$x1, pos_from),
                   calc_pos(overlap$y0, overlap$y1, pos_to),
                   r = 0)

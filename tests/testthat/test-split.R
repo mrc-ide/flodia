@@ -2,7 +2,7 @@ test_that("splitx and splity work as expected", {
   split <- function() {
     r <- 0.1
     mid <- node(0, 0, r, label = "mid", node_col = light_palette("bupu"))
-    r1  <- node(0.8, 0.4, r * 2, label = "r1",  node_col = light_palette("ylgn"))
+    r1  <- node(0.8, 0.4, r * 2, label = "r1", node_col = light_palette("ylgn"))
     r0  <- node(1, -0.4, r, label = "r0",  node_col = light_palette("ylgn"))
 
     l1  <- node(-1, 0.4, r, label = "l1",  node_col = light_palette("ylgn"))
