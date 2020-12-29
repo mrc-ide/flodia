@@ -1,5 +1,6 @@
 test_that("bendx and bendy work as expected", {
   fivepoint <- function() {
+
     r <- 0.1
     mid <- node(0, 0, r, label = "mid", node_col = light_palette("bupu"))
     tl  <- node(-1, 1, r, label = "tl",  node_col = light_palette("ylgn"))
