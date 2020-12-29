@@ -4,12 +4,13 @@
 \alias{flodia}
 \title{plot a flodia}
 \usage{
-flodia(f, oma = 0.1, args = list())
+flodia(f, oma = rep(0.1, 4), args = list())
 }
 \arguments{
 \item{f}{flodia plot function}
 
-\item{oma}{single numeric outer margin of plot, default is 1}
+\item{oma}{numeric of length 4 specifying outer margin of plot, at x0, y0,
+x1, and y1. Default is 0.1}
 
 \item{args}{list of named arguments to \code{f}}
 }
