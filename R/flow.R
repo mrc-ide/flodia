@@ -82,6 +82,19 @@ flow <- function(from, to, label = NULL,
     y <- label_y %||% (y0 + label_gap)
   }
 
+  add_arrow(x0, x1, y0, y1, x, y,
+            label, label_font, label_cex, label_col,
+            arr_width, arr_type, arr_length, arr_col, arr_lty, ...)
+
+  list(x = calc_pos(x0, x1), y = calc_pos(y0, y1),
+       x0 = x0, y0 = y0, x1 = x1, y1 = y1)
+}
+
+
+add_arrow <- function(x0, x1, y0, y1, x, y,
+                      label, label_font, label_cex, label_col,
+                      arr_width, arr_type, arr_length, arr_col, arr_lty, ...) {
+
   segments(x0, y0, x1, y1, lty = arr_lty, col = arr_col, ...)
 
   if (arr_width > 0) {
@@ -95,6 +108,4 @@ flow <- function(from, to, label = NULL,
 
   text(x, y, labels = label, font = label_font, cex = label_cex,
        col = label_col, adj = 0.5)
-  list(x = calc_pos(x0, x1), y = calc_pos(y0, y1),
-       x0 = x0, y0 = y0, x1 = x1, y1 = y1)
 }
