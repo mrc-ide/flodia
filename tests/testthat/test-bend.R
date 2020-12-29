@@ -38,7 +38,20 @@ test_that("bendx and bendy work as expected", {
     list(x0 = bl$x0, x1 = tr$x1, y0 = bl$y0, y1 = tr$y1)
   }
 
-
+  # regression test against diagram
   vdiffr::expect_doppelganger(title = "bend diagram",
                               fig = function() flodia(fivepoint))
+
+  # check error cases
+  plot.new()
+  r <- 0.1
+  n1 <- node(0, 0, r)
+  n2 <- node(0, 1, r)
+  n3 <- node(1, 0, r)
+  expect_error(bendx(n1, n2), "n1 and mid must not intersect")
+  expect_error(bendx(n1, n3), "mid and n3 must not intersect")
+  expect_error(bendy(n1, n2), "mid and n2 must not intersect")
+  expect_error(bendy(n1, n3), "n1 and mid must not intersect")
+  dev.off()
+
 })

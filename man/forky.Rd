@@ -2,7 +2,7 @@
 % Please edit documentation in R/fork.R
 \name{forky}
 \alias{forky}
-\title{add fork between three nodes, in direction y}
+\title{add fork between three nodes, in the y-direction}
 \usage{
 forky(
   from,
@@ -28,6 +28,9 @@ forky(
   label_to0_y = NULL,
   label_to1_y = label_to0_y,
   arr_width = NULL,
+  name_from = deparse(substitute(from)),
+  name_to0 = deparse(substitute(to0)),
+  name_to1 = deparse(substitute(to1)),
   ...
 )
 }
@@ -94,11 +97,17 @@ flow into \code{to1} to draw \code{label_to1}, where 0 = start and 1 = end}
 
 \item{arr_width}{width of arrow, defaults to same as \code{\link[=flow]{flow()}}}
 
+\item{name_from}{internal argument used for informative error messages}
+
+\item{name_to0}{internal argument used for informative error messages}
+
+\item{name_to1}{internal argument used for informative error messages}
+
 \item{...}{additional formatting arguments to \code{\link[=flow]{flow()}}}
 }
 \value{
 returns the start and end points of the flow
 }
 \description{
-add fork between three nodes, in direction y
+add fork between three nodes, in the y-direction
 }

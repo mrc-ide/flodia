@@ -24,4 +24,16 @@ test_that("turnx and turny work as expected", {
   }
 
   vdiffr::expect_doppelganger("SIS diagram", fig = function() flodia(sis))
+
+  # check error cases
+  plot.new()
+  r <- 0.1
+  n1 <- node(0, 0, r, label = 1)
+  n2 <- node(0, 1, r, label = 2)
+  n3 <- node(1, 0, r, label = 3)
+  expect_error(turnx(n1, n1$x1 + 1, n1), "n1 and n1 must not intersect")
+  expect_error(turnx(n1, n1$x, n2), "n1 and turn must not intersect")
+  expect_error(turny(n1, n1$y1 + 1, n1), "n1 and n1 must not intersect")
+  expect_error(turny(n1, n1$y, n3), "n1 and turn must not intersect")
+  dev.off()
 })

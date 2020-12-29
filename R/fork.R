@@ -1,5 +1,5 @@
 
-#' @title add fork between three nodes, in direction x
+#' @title add fork between three nodes, in the x-direction
 #' @param from start node
 #' @param to0 the bottom end node
 #' @param to1 the top end node
@@ -39,6 +39,9 @@
 #'@param label_to1_y y co-ordinate of `label_to1` position, overrides use of
 #' `label_to1_pos` and / or `label_to1_gap`
 #' @param arr_width width of arrow, defaults to same as [flow()]
+#' @param name_from internal argument used for informative error messages
+#' @param name_to0 internal argument used for informative error messages
+#' @param name_to1 internal argument used for informative error messages
 #' @param ... additional formatting arguments to [flow()]
 #' @return returns the start and end points of the flow
 #' @export
@@ -52,36 +55,46 @@ forkx <-
            label_to0_gap = label_from_gap, label_to1_gap = label_to0_gap,
            label_from_x = NULL, label_to0_x = NULL, label_to1_x = label_to0_x,
            label_from_y = NULL, label_to0_y = NULL, label_to1_y = NULL,
-           arr_width = NULL, ...) {
+           arr_width = NULL,
+           name_from = deparse(substitute(from)),
+           name_to0 = deparse(substitute(to0)),
+           name_to1 = deparse(substitute(to1)), ...) {
 
-  if (abs(to0$x - from$x) < abs(to1$x - from$x)) {
-    nearest <- to0
-  } else {
-    nearest <- to1
+    assert_no_intersect(to0, to1, name_to0, name_to1)
+
+    if (abs(to0$x - from$x) < abs(to1$x - from$x)) {
+      nearest <- to0
+    } else {
+      nearest <- to1
+    }
+    split <- node(calc_pos(from$x, nearest$x, pos),
+                  calc_pos(from$y0, from$y1, pos_from),
+                  r = 0)
+
+    flowx(from, split, pos = pos_from,
+          label = label_from, label_pos = label_from_pos, arr_width = 0,
+          label_gap = label_from_gap, label_x = label_from_x,
+          label_y = label_from_y, name_from = name_from, ...)
+    bendy(split, to0, pos_to = pos_to0,
+          label_to = label_to0, label_to_pos = label_to0_pos,
+          label_to_gap = label_to0_gap, label_to_x = label_to0_x,
+          label_to_y = label_to0_y, arr_width = arr_width, name_to = name_to0,
+          ...)
+    bendy(split, to1, pos_to = pos_to1,
+          label_to = label_to1, label_to_pos = label_to1_pos,
+          label_to_gap = label_to1_gap, label_to_x = label_to1_x,
+          label_to_y = label_to1_y, arr_width = arr_width, name_to = name_to1,
+          ...)
+
+    list(x0 = min(from$x0, to0$x0, to1$x0),
+         y0 = min(from$y0, to0$y0, to1$y0),
+         x1 = max(from$x1, to0$x1, to1$x1),
+         y1 = max(from$y1, to0$y1, to1$y1),
+         x = split$x, y = split$y)
   }
-  split <- node(calc_pos(from$x, nearest$x, pos),
-                calc_pos(from$y0, from$y1, pos_from),
-                r = 0)
-
-  flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
-       label_gap = label_from_gap, label_x = label_from_x,
-       label_y = label_from_y, ...)
-  bendy(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
-        label_to_gap = label_to0_gap, label_to_x = label_to0_x,
-        label_to_y = label_to0_y, arr_width = arr_width, ...)
-  bendy(split, to1, label_to = label_to1, label_to_pos = label_to1_pos,
-        label_to_gap = label_to1_gap, label_to_x = label_to1_x,
-        label_to_y = label_to1_y, arr_width = arr_width, ...)
-
-  list(x0 = min(from$x0, to0$x0, to1$x0),
-       y0 = min(from$y0, to0$y0, to1$y0),
-       x1 = max(from$x1, to0$x1, to1$x1),
-       y1 = max(from$y1, to0$y1, to1$y1),
-       x = split$x, y = split$y)
-  }
 
 
-#' @title add fork between three nodes, in direction y
+#' @title add fork between three nodes, in the y-direction
 #' @param from start node
 #' @param to0 the left end node
 #' @param to1 the right end node
@@ -121,6 +134,9 @@ forkx <-
 #'@param label_to1_y y co-ordinate of `label_to1` position, overrides use of
 #' `label_to1_pos` and / or `label_to1_gap`
 #' @param arr_width width of arrow, defaults to same as [flow()]
+#' @param name_from internal argument used for informative error messages
+#' @param name_to0 internal argument used for informative error messages
+#' @param name_to1 internal argument used for informative error messages
 #' @param ... additional formatting arguments to [flow()]
 #' @return returns the start and end points of the flow
 #' @export
@@ -134,7 +150,12 @@ forky <-
            label_to0_gap = label_from_gap, label_to1_gap = label_to0_gap,
            label_from_x = NULL, label_to0_x = NULL, label_to1_x = NULL,
            label_from_y = NULL, label_to0_y = NULL, label_to1_y = label_to0_y,
-           arr_width = NULL, ...) {
+           arr_width = NULL,
+           name_from = deparse(substitute(from)),
+           name_to0 = deparse(substitute(to0)),
+           name_to1 = deparse(substitute(to1)), ...) {
+
+    assert_no_intersect(to0, to1, name_to0, name_to1)
 
     if (abs(to0$y - from$y) < abs(to1$y - from$y)) {
       nearest <- to0
@@ -146,15 +167,20 @@ forky <-
                   calc_pos(from$y, nearest$y, pos),
                   r = 0)
 
-    flow(from, split, label_from, label_pos = label_from_pos, arr_width = 0,
-         label_gap = label_from_gap, label_x = label_from_x,
-         label_y = label_from_y, ...)
-    bendx(split, to0, label_to = label_to0, label_to_pos = label_to0_pos,
+    flowy(from, split, pos = pos_from,
+          label = label_from, label_pos = label_from_pos, arr_width = 0,
+          label_gap = label_from_gap, label_x = label_from_x,
+          label_y = label_from_y, name_from = name_from, ...)
+    bendx(split, to0, pos_to = pos_to0,
+          label_to = label_to0, label_to_pos = label_to0_pos,
           label_to_gap = label_to0_gap, label_to_x = label_to0_x,
-          label_to_y = label_to0_y, arr_width = arr_width, ...)
-    bendx(split, to1, label_to = label_to1, label_to_pos = label_to1_pos,
+          label_to_y = label_to0_y, arr_width = arr_width,
+          name_to = name_to0, ...)
+    bendx(split, to1, pos_to = pos_to1,
+          label_to = label_to1, label_to_pos = label_to1_pos,
           label_to_gap = label_to1_gap, label_to_x = label_to1_x,
-          label_to_y = label_to1_y, arr_width = arr_width, ...)
+          label_to_y = label_to1_y, arr_width = arr_width,
+          name_to = name_to1, ...)
 
     list(x0 = min(from$x0, to0$x0, to1$x0),
          y0 = min(from$y0, to0$y0, to1$y0),

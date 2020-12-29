@@ -55,7 +55,6 @@ test_that("flowx and flowy work as expected", {
               label_col = mid_palette("gnbu"))
 
     finxlr <- flowx(to = z, length = 1, label = "inx L to R", pos = 0.2)
-    # browser()
     finxrl <- flowx(to = z, length = -1, label = "inx R to L", pos = 0.2,
                     label_pos = 0.3, label_gap = -0.1,
                     label_col = mid_palette("bupu"),
@@ -90,4 +89,3 @@ test_that("flowx and flowy work as expected", {
   vdiffr::expect_doppelganger("in out flow diagram",
                               fig = function() flodia(inout))
 })
-

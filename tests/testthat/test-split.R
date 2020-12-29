@@ -29,4 +29,29 @@ test_that("splitx and splity work as expected", {
 
   vdiffr::expect_doppelganger(title = "split diagram",
                               fig = function() flodia(split))
+
+  # check error cases
+  plot.new()
+  r <- 0.1
+  n1 <- node(0, 0, r, label = 1)
+  n2 <- node(0, 1, r, label = 2)
+  n3 <- node(1, 0, r, label = 3)
+  n4 <- node(1, 1, r, label = 4)
+  expect_error(splitx(n1, n2, n3), "n2 and n3 must overlap in the x direction")
+  expect_error(splity(n1, n2, n3), "n2 and n3 must overlap in the y direction")
+  expect_error(splitx(n1, n3, n4), "mid and n3 must not intersect")
+  expect_error(splitx(n2, n3, n4), "mid and n4 must not intersect")
+  expect_error(splity(n1, n2, n4), "mid and n2 must not intersect")
+  expect_error(splity(n2, n3, n1), "mid and n1 must not intersect")
+  expect_error(splity(n1, n2, n2), "n2 and n2 must not intersect")
+  expect_error(splitx(n1, n3, n3), "n3 and n3 must not intersect")
+  dev.off()
+
+  # TODO fix this behaviour
+  plot.new()
+  n1 <- node(0.1, 0.5, r)
+  n2 <- node(0.7, 0.9, r * 2, label = 2)
+  n3 <- node(0.6, 0.1, r, label = 3)
+  splitx(n1, n2, n3)
+  dev.off()
 })
