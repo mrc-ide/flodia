@@ -43,3 +43,15 @@ test_that("forkx and forky work as expected", {
   expect_error(forkx(n1, n3, n3), "n3 and n3 must not intersect")
   dev.off()
 })
+
+test_that("can specify forkx and forky by length", {
+  plot(0, 0, type = "n", xlim = c(-1, 2), ylim = c(-1, 2))
+  r <- 0.1
+  n2 <- node(0.7, 0.9, r, label = 2)
+  n3 <- node(0.5, 0.1, r, label = 3)
+  forkx(to0 = n2, to1 = n3, length = 0.5)
+  forkx(to0 = n2, to1 = n3, length = -0.5)
+  forky(to0 = n2, to1 = n3, length = 0.5)
+  forky(to0 = n2, to1 = n3, length = -0.5)
+  dev.off()
+})
