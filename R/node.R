@@ -18,7 +18,7 @@ node <- function(x, y, r = 0.1,
                  label = "",
                  rx = r, ry = r,
                  x_root = 0, y_root = 0,
-                 node_col = "grey80", border = "black",
+                 node_col = NULL, border = "black",
                  label_font = 1, label_col = "black", label_cex = 1) {
   x <- x + x_root
   y <- y + y_root
