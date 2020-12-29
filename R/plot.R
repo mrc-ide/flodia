@@ -62,10 +62,10 @@ flodia_null <- function(f, args = list(), oma = rep(0.1, 4)) {
   z <- do.call(f, args)
   dev.off()
 
-  z$x0 <- z$x0 - oma[1]
-  z$y0 <- z$y0 - oma[2]
-  z$x1 <- z$x1 + oma[3]
-  z$y1 <- z$y1 + oma[4]
+  z$x0 <- z$x0 - oma[2]
+  z$y0 <- z$y0 - oma[1]
+  z$x1 <- z$x1 + oma[4]
+  z$y1 <- z$y1 + oma[3]
 
   z
 }
