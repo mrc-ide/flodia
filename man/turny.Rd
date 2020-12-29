@@ -26,6 +26,8 @@ turny(
   label_mid_y = NULL,
   label_to_y = NULL,
   arr_width = NULL,
+  name_from = deparse(substitute(from)),
+  name_to = deparse(substitute(to)),
   ...
 )
 }
@@ -49,13 +51,13 @@ flow out of \code{from}, where 0 = left and 1 = right}
 flow to node \code{to}, where 0 = left and 1 = right}
 
 \item{label_from_pos}{a decimal between 0 and 1 giving the position along the
-flow out of \code{from} to draw \code{label_from}, where 0 = start and 1 = end}
+flow out of \code{from} to draw \code{label_from}, where 0 = bottom and 1 = top}
 
 \item{label_mid_pos}{a decimal between 0 and 1 giving the position along the
-\code{mid} flow to draw \code{label_mid}, where 0 = start and 1 = end}
+\code{mid} flow to draw \code{label_mid}, where 0 = left and 1 = right}
 
 \item{label_to_pos}{a decimal between 0 and 1 giving the position along the
-flow into \code{to} to draw \code{label_to}, where 0 = start and 1 = end}
+flow into \code{to} to draw \code{label_to}, where 0 = bottom and 1 = top}
 
 \item{label_from_gap}{distance from the flow out of \code{from} at which to draw
 \code{label_from} default = 0.05}
@@ -67,24 +69,28 @@ flow into \code{to} to draw \code{label_to}, where 0 = start and 1 = end}
 \code{label_to} default = 0.05}
 
 \item{label_from_x}{x co-ordinate of \code{label_from} position, overrides use of
-\code{label_from_pos} and / or \code{label_from_gap}}
+\code{label_from_gap}}
 
 \item{label_mid_x}{x co-ordinate of \code{label_mid} position, overrides use of
-\code{label_mid_pos} and / or \code{label_mid_gap}}
+\code{label_mid_pos}}
 
 \item{label_to_x}{x co-ordinate of \code{label_to} position, overrides use of
-\code{label_to_pos} and / or \code{label_to_gap}}
+\code{label_to_gap}}
 
 \item{label_from_y}{y co-ordinate of \code{label_from} position, overrides use of
-\code{label_from_pos} and / or \code{label_from_gap}}
+\code{label_from_pos}}
 
 \item{label_mid_y}{y co-ordinate of \code{label_mid} position, overrides use of
-\code{label_mid_pos} and / or \code{label_mid_gap}}
+\code{label_mid_gap}}
 
 \item{label_to_y}{y co-ordinate of \code{label_to} position, overrides use of
-\code{label_to_pos} and / or \code{label_to_gap}}
+\code{label_to_pos}}
 
 \item{arr_width}{width of arrow, defaults to same as \code{\link[=flow]{flow()}}}
+
+\item{name_from}{internal argument used for informative error messages}
+
+\item{name_to}{internal argument used for informative error messages}
 
 \item{...}{additional formatting arguments to \code{\link[=flow]{flow()}}}
 }

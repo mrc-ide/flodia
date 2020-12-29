@@ -1,6 +1,13 @@
+# flodia 0.0.8
+
+* allow flowx/y, forkx/y and splitx/y to be optionally determined by a length
+argument
+* fix bug in forkx/y flow positioning
+* improve error case testing
+
 # flodia 0.0.7
 
-* add inflow / outflow functions
+* add flowx / flowy functions
 * fix bug in label positioning
 
 # flodia 0.0.6

@@ -56,11 +56,24 @@ assert_yoverlap <- function(node0, node1,
 }
 
 assert_no_intersect <- function(node0, node1,
-                            name0 = deparse(substitute(node0)),
-                            name1 = deparse(substitute(node1))) {
+                                name0 = deparse(substitute(node0)),
+                                name1 = deparse(substitute(node1))) {
   x <- xoverlap(node0, node1)
   y <- yoverlap(node0, node1)
   if ((length(x) > 1) & (length(y) > 1)) {
     stop(sprintf("%s and %s must not intersect", name0, name1))
   }
+}
+
+check_flow_args <- function(to, from, length) {
+
+  to_exists <- length(to) > 0
+  from_exists <- length(from) > 0
+  length_exists <- !is.null(length)
+
+  args_exist <- (to_exists & from_exists) |
+    (to_exists & length_exists) |
+    (from_exists & length_exists)
+
+  stopifnot("must specify two of `to`, `from`, and `length`" = args_exist)
 }
