@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>add split between three nodes, in direction x — splitx • flodia</title>
+<title>add split between three nodes, in the x-direction — splitx • flodia</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="add split between three nodes, in direction x — splitx" />
-<meta property="og:description" content="add split between three nodes, in direction x" />
+<meta property="og:title" content="add split between three nodes, in the x-direction — splitx" />
+<meta property="og:description" content="add split between three nodes, in the x-direction" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">flodia</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.8</span>
       </span>
     </div>
 
@@ -119,19 +119,20 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>add split between three nodes, in direction x</h1>
+    <h1>add split between three nodes, in the x-direction</h1>
     <small class="dont-index">Source: <a href='https://github.com/mrc-ide/flodia/blob/master/R/split.R'><code>R/split.R</code></a></small>
     <div class="hidden name"><code>splitx.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>add split between three nodes, in direction x</p>
+    <p>add split between three nodes, in the x-direction</p>
     </div>
 
     <pre class="usage"><span class='fu'>splitx</span><span class='op'>(</span>
-  <span class='va'>from</span>,
+  from <span class='op'>=</span> <span class='cn'>NULL</span>,
   <span class='va'>to0</span>,
   <span class='va'>to1</span>,
+  length <span class='op'>=</span> <span class='cn'>NULL</span>,
   label_from <span class='op'>=</span> <span class='cn'>NULL</span>,
   label_to0 <span class='op'>=</span> <span class='cn'>NULL</span>,
   label_to1 <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -150,6 +151,9 @@
   label_to0_y <span class='op'>=</span> <span class='cn'>NULL</span>,
   label_to1_y <span class='op'>=</span> <span class='cn'>NULL</span>,
   arr_width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  name_from <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span><span class='op'>)</span>,
+  name_to0 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>to0</span><span class='op'>)</span><span class='op'>)</span>,
+  name_to1 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>to1</span><span class='op'>)</span><span class='op'>)</span>,
   <span class='va'>...</span>
 <span class='op'>)</span></pre>
 
@@ -167,6 +171,12 @@
     <tr>
       <th>to1</th>
       <td><p>the top end node</p></td>
+    </tr>
+    <tr>
+      <th>length</th>
+      <td><p>single numeric specifying length, positive will result in a
+fork from left to right, negative from right to left. Optional parameter
+replacing <code>from</code></p></td>
     </tr>
     <tr>
       <th>label_from</th>
@@ -253,6 +263,18 @@ flow into <code>to1</code> to draw <code>label_to1</code>, where 0 = start and 1
     <tr>
       <th>arr_width</th>
       <td><p>width of arrow, defaults to same as <code><a href='flow.html'>flow()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>name_from</th>
+      <td><p>internal argument used for informative error messages</p></td>
+    </tr>
+    <tr>
+      <th>name_to0</th>
+      <td><p>internal argument used for informative error messages</p></td>
+    </tr>
+    <tr>
+      <th>name_to1</th>
+      <td><p>internal argument used for informative error messages</p></td>
     </tr>
     <tr>
       <th>...</th>

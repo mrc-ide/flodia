@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">flodia</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.8</span>
       </span>
     </div>
 
@@ -145,6 +145,8 @@
   arr_length <span class='op'>=</span> <span class='fl'>0.15</span>,
   arr_width <span class='op'>=</span> <span class='cn'>NULL</span>,
   arr_lty <span class='op'>=</span> <span class='fl'>1</span>,
+  name_from <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span><span class='op'>)</span>,
+  name_to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>to</span><span class='op'>)</span><span class='op'>)</span>,
   <span class='va'>...</span>
 <span class='op'>)</span></pre>
 
@@ -172,7 +174,7 @@ interval over which the nodes overlap.</p></td>
     <tr>
       <th>label_pos</th>
       <td><p>a decimal between 0 and 1 giving the position along the flow
-to draw the label, where 0 = bottom / left and 1 = top/right</p></td>
+to draw <code>label</code>, where 0 = bottom / left and 1 = top/right</p></td>
     </tr>
     <tr>
       <th>label_gap</th>
@@ -181,21 +183,21 @@ default = 0.1</p></td>
     </tr>
     <tr>
       <th>label_x</th>
-      <td><p>x co-ordinate of label position, overrides use of label_pos
-and / or label_gap</p></td>
+      <td><p>x co-ordinate of label position, overrides use of <code>label_pos</code>
+and / or <code>label_gap</code></p></td>
     </tr>
     <tr>
       <th>label_y</th>
-      <td><p>y co-ordinate of label position, overrides use of label_pos
-and / or label_gap</p></td>
+      <td><p>y co-ordinate of label position, overrides use of <code>label_pos</code>
+and / or <code>label_gap</code></p></td>
     </tr>
     <tr>
       <th>label_col</th>
-      <td><p>colour of label, defaults to black</p></td>
+      <td><p>colour of <code>label</code>, defaults to black</p></td>
     </tr>
     <tr>
       <th>label_font</th>
-      <td><p>font of label, defaults to 3</p></td>
+      <td><p>font of <code>label</code>, defaults to 3</p></td>
     </tr>
     <tr>
       <th>label_cex</th>
@@ -220,6 +222,14 @@ and / or label_gap</p></td>
     <tr>
       <th>arr_lty</th>
       <td><p>lty of arrow, defaults to 1</p></td>
+    </tr>
+    <tr>
+      <th>name_from</th>
+      <td><p>internal argument used for informative error messages</p></td>
+    </tr>
+    <tr>
+      <th>name_to</th>
+      <td><p>internal argument used for informative error messages</p></td>
     </tr>
     <tr>
       <th>...</th>

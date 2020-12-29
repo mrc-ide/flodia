@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>light palette — light_palette • flodia</title>
+<title>add a flow between two nodes in the x-direction — flowx • flodia</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="light palette — light_palette" />
-<meta property="og:description" content="light palette" />
+<meta property="og:title" content="add a flow between two nodes in the x-direction — flowx" />
+<meta property="og:description" content="add a flow between two nodes in the x-direction" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,28 +119,132 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>light palette</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mrc-ide/flodia/blob/master/R/palette.R'><code>R/palette.R</code></a></small>
-    <div class="hidden name"><code>light_palette.Rd</code></div>
+    <h1>add a flow between two nodes in the x-direction</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mrc-ide/flodia/blob/master/R/flow.R'><code>R/flow.R</code></a></small>
+    <div class="hidden name"><code>flowx.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>light palette</p>
+    <p>add a flow between two nodes in the x-direction</p>
     </div>
 
-    <pre class="usage"><span class='fu'>light_palette</span><span class='op'>(</span><span class='va'>col</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>flowx</span><span class='op'>(</span>
+  from <span class='op'>=</span> <span class='cn'>NULL</span>,
+  to <span class='op'>=</span> <span class='cn'>NULL</span>,
+  length <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label <span class='op'>=</span> <span class='cn'>NULL</span>,
+  pos <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_pos <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_gap <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_x <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_y <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_col <span class='op'>=</span> <span class='st'>"black"</span>,
+  label_font <span class='op'>=</span> <span class='fl'>3</span>,
+  label_cex <span class='op'>=</span> <span class='fl'>0.8</span>,
+  arr_type <span class='op'>=</span> <span class='st'>"triangle"</span>,
+  arr_col <span class='op'>=</span> <span class='st'>"black"</span>,
+  arr_length <span class='op'>=</span> <span class='fl'>0.15</span>,
+  arr_width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  arr_lty <span class='op'>=</span> <span class='fl'>1</span>,
+  name_from <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span><span class='op'>)</span>,
+  name_to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>to</span><span class='op'>)</span><span class='op'>)</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>col</th>
-      <td><p>either an integer vector between 1 and 15 or a string of the
-following possible colour names: rd, or, oryl, yl, ylgn, gn, gnbu, bu, bupu,
-pu, pupi, pi, gr</p></td>
+      <th>from</th>
+      <td><p>start node</p></td>
+    </tr>
+    <tr>
+      <th>to</th>
+      <td><p>end node</p></td>
+    </tr>
+    <tr>
+      <th>length</th>
+      <td><p>single numeric specifying length, positive will result in a
+flow from left to right, negative from right to left. Optional parameter
+replacing either <code>to</code> or <code>from</code></p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>label to draw on flow</p></td>
+    </tr>
+    <tr>
+      <th>pos</th>
+      <td><p>a decimal between 0 and 1 giving the position of the flow relative
+to the nodes. Where 0 = bottom and 1 = top of the
+interval over which the nodes overlap.</p></td>
+    </tr>
+    <tr>
+      <th>label_pos</th>
+      <td><p>a decimal between 0 and 1 giving the x-position along the
+flow to draw the label, where 0 = left and 1 = right</p></td>
+    </tr>
+    <tr>
+      <th>label_gap</th>
+      <td><p>y-distance from the flow at which to draw the label,
+default = 0.05</p></td>
+    </tr>
+    <tr>
+      <th>label_x</th>
+      <td><p>x co-ordinate of label position, overrides use of <code>label_pos</code></p></td>
+    </tr>
+    <tr>
+      <th>label_y</th>
+      <td><p>y co-ordinate of label position, overrides use of <code>label_gap</code></p></td>
+    </tr>
+    <tr>
+      <th>label_col</th>
+      <td><p>colour of label, defaults to black</p></td>
+    </tr>
+    <tr>
+      <th>label_font</th>
+      <td><p>font of label, defaults to 3</p></td>
+    </tr>
+    <tr>
+      <th>label_cex</th>
+      <td><p>label cex, defaults to 0.8</p></td>
+    </tr>
+    <tr>
+      <th>arr_type</th>
+      <td><p>type of arrow head to draw default = triangle</p></td>
+    </tr>
+    <tr>
+      <th>arr_col</th>
+      <td><p>colour of arrow default = black</p></td>
+    </tr>
+    <tr>
+      <th>arr_length</th>
+      <td><p>length of arrow head, defaults to 0.2</p></td>
+    </tr>
+    <tr>
+      <th>arr_width</th>
+      <td><p>width of arrow head, defaults to 0.1</p></td>
+    </tr>
+    <tr>
+      <th>arr_lty</th>
+      <td><p>lty of arrow, defaults to 1</p></td>
+    </tr>
+    <tr>
+      <th>name_from</th>
+      <td><p>internal argument used for informative error messages</p></td>
+    </tr>
+    <tr>
+      <th>name_to</th>
+      <td><p>internal argument used for informative error messages</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>additional formatting arguments to arrow()</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>returns the start and end points of the flow</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

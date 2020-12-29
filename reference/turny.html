@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">flodia</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.8</span>
       </span>
     </div>
 
@@ -150,6 +150,8 @@
   label_mid_y <span class='op'>=</span> <span class='cn'>NULL</span>,
   label_to_y <span class='op'>=</span> <span class='cn'>NULL</span>,
   arr_width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  name_from <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span><span class='op'>)</span>,
+  name_to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>to</span><span class='op'>)</span><span class='op'>)</span>,
   <span class='va'>...</span>
 <span class='op'>)</span></pre>
 
@@ -193,17 +195,17 @@ flow to node <code>to</code>, where 0 = left and 1 = right</p></td>
     <tr>
       <th>label_from_pos</th>
       <td><p>a decimal between 0 and 1 giving the position along the
-flow out of <code>from</code> to draw <code>label_from</code>, where 0 = start and 1 = end</p></td>
+flow out of <code>from</code> to draw <code>label_from</code>, where 0 = bottom and 1 = top</p></td>
     </tr>
     <tr>
       <th>label_mid_pos</th>
       <td><p>a decimal between 0 and 1 giving the position along the
-<code>mid</code> flow to draw <code>label_mid</code>, where 0 = start and 1 = end</p></td>
+<code>mid</code> flow to draw <code>label_mid</code>, where 0 = left and 1 = right</p></td>
     </tr>
     <tr>
       <th>label_to_pos</th>
       <td><p>a decimal between 0 and 1 giving the position along the
-flow into <code>to</code> to draw <code>label_to</code>, where 0 = start and 1 = end</p></td>
+flow into <code>to</code> to draw <code>label_to</code>, where 0 = bottom and 1 = top</p></td>
     </tr>
     <tr>
       <th>label_from_gap</th>
@@ -223,36 +225,44 @@ flow into <code>to</code> to draw <code>label_to</code>, where 0 = start and 1 =
     <tr>
       <th>label_from_x</th>
       <td><p>x co-ordinate of <code>label_from</code> position, overrides use of
-<code>label_from_pos</code> and / or <code>label_from_gap</code></p></td>
+<code>label_from_gap</code></p></td>
     </tr>
     <tr>
       <th>label_mid_x</th>
       <td><p>x co-ordinate of <code>label_mid</code> position, overrides use of
-<code>label_mid_pos</code> and / or <code>label_mid_gap</code></p></td>
+<code>label_mid_pos</code></p></td>
     </tr>
     <tr>
       <th>label_to_x</th>
       <td><p>x co-ordinate of <code>label_to</code> position, overrides use of
-<code>label_to_pos</code> and / or <code>label_to_gap</code></p></td>
+<code>label_to_gap</code></p></td>
     </tr>
     <tr>
       <th>label_from_y</th>
       <td><p>y co-ordinate of <code>label_from</code> position, overrides use of
-<code>label_from_pos</code> and / or <code>label_from_gap</code></p></td>
+<code>label_from_pos</code></p></td>
     </tr>
     <tr>
       <th>label_mid_y</th>
       <td><p>y co-ordinate of <code>label_mid</code> position, overrides use of
-<code>label_mid_pos</code> and / or <code>label_mid_gap</code></p></td>
+<code>label_mid_gap</code></p></td>
     </tr>
     <tr>
       <th>label_to_y</th>
       <td><p>y co-ordinate of <code>label_to</code> position, overrides use of
-<code>label_to_pos</code> and / or <code>label_to_gap</code></p></td>
+<code>label_to_pos</code></p></td>
     </tr>
     <tr>
       <th>arr_width</th>
       <td><p>width of arrow, defaults to same as <code><a href='flow.html'>flow()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>name_from</th>
+      <td><p>internal argument used for informative error messages</p></td>
+    </tr>
+    <tr>
+      <th>name_to</th>
+      <td><p>internal argument used for informative error messages</p></td>
     </tr>
     <tr>
       <th>...</th>
