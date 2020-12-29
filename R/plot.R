@@ -1,11 +1,12 @@
 #' @title plot a flodia
 #' @param f flodia plot function
 #' @param oma single numeric outer margin of plot, default is 1
+#' @param args list of named arguments to `f`
 #' @importFrom withr with_par
 #' @export
-flodia <- function(f, oma = 0.1) {
+flodia <- function(f, oma = 0.1, args = list()) {
 
-  z <- flodia_null(f, oma)
+  z <- flodia_null(f, oma, args)
 
   withr::with_par(new = list(mar = rep(0, 4), mgp = rep(0, 3), bty = "n",
                              oma = rep(0, 4)),
@@ -13,7 +14,7 @@ flodia <- function(f, oma = 0.1) {
                     plot(0, 0, type = "n", xlim = c(z$x0, z$x1),
                          ylim = c(z$y0, z$y1),
                          axes = FALSE)
-                    f()
+                    do.call(f, args)
                   })
 
   z
@@ -26,18 +27,20 @@ flodia <- function(f, oma = 0.1) {
 #'  based on plot dimensions)
 #' @param res resolution of plot default = 200 dpi
 #' @param oma single numeric outer margin of plot, default is 0.1
+#' @param args list of named arguments to `f`
 #' @param ... other arguments to png()
 #' @export
 #' @importFrom grDevices png
 #' @importFrom grDevices dev.off
-flodia_png <- function(f, filepath, width = 1200, res = 200, oma = 0.1, ...) {
+flodia_png <- function(f, filepath, width = 1200, res = 200, oma = 0.1,
+                       args = list(), ...) {
 
   # extract co-ordinates of flow diagram
-  z <- flodia_null(f, oma)
+  z <- flodia_null(f, oma, args)
 
   height <- round(width * (z$y1 - z$y0) / (z$x1 - z$x0))
   png(filepath, width, height, res = res, ...)
-  flodia(f, oma)
+  flodia(f, oma, args)
   dev.off()
 }
 
@@ -45,14 +48,15 @@ flodia_png <- function(f, filepath, width = 1200, res = 200, oma = 0.1, ...) {
 #' @title run a flodia without plotting (e.g to extract co-ordinates)
 #' @param f flodia plot function
 #' @param oma single numeric outer margin of plot, default is 0.1
+#' @param args list of named arguments to `f`
 #' @importFrom grDevices pdf
 #' @importFrom graphics plot.new
 #' @export
-flodia_null <- function(f, oma = 0.1) {
+flodia_null <- function(f, oma = 0.1, args = list()) {
 
   pdf(NULL)
   plot.new()
-  z <- f()
+  z <- do.call(f, args)
   dev.off()
 
   z$x0 <- z$x0 - oma
