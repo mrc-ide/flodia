@@ -123,6 +123,12 @@ flodia_png(sdar_col, filepath = "figs/sdar_col.png", res = 250)
 
 ![Colour-coded Susceptible-Infected-Recovered-Susceptible diagram with disease and asymptomatic carriage](figs/sdar_col.png){width=15cm}
 
+Group nodes
+
+```{r}
+
+```
+
 
 ## Styles
 
