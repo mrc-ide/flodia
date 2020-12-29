@@ -177,7 +177,7 @@ forky <-
 
     if (length(from) == 0) { # specify based on length
       y <- ifelse(length > 0, min(to0$y0, to1$y0), max(to0$y1, to1$y1)) - length
-      from <- node(calc_pos(to0$x, to1$x, pos), y, r = 0)
+      from <- node(calc_pos(to0$x, to1$x, pos_from), y, r = 0)
     }
 
     if (abs(to0$y - from$y) < abs(to1$y - from$y)) {
@@ -195,15 +195,15 @@ forky <-
           label_gap = label_from_gap, label_x = label_from_x,
           label_y = label_from_y, name_from = name_from, ...)
     flow0 <- bendx(split, to0, pos_to = pos_to0,
-          label_to = label_to0, label_to_pos = label_to0_pos,
-          label_to_gap = label_to0_gap, label_to_x = label_to0_x,
-          label_to_y = label_to0_y, arr_width = arr_width,
-          name_to = name_to0, ...)
+                   label_to = label_to0, label_to_pos = label_to0_pos,
+                   label_to_gap = label_to0_gap, label_to_x = label_to0_x,
+                   label_to_y = label_to0_y, arr_width = arr_width,
+                   name_to = name_to0, ...)
     flow1 <- bendx(split, to1, pos_to = pos_to1,
-          label_to = label_to1, label_to_pos = label_to1_pos,
-          label_to_gap = label_to1_gap, label_to_x = label_to1_x,
-          label_to_y = label_to1_y, arr_width = arr_width,
-          name_to = name_to1, ...)
+                   label_to = label_to1, label_to_pos = label_to1_pos,
+                   label_to_gap = label_to1_gap, label_to_x = label_to1_x,
+                   label_to_y = label_to1_y, arr_width = arr_width,
+                   name_to = name_to1, ...)
 
     list(x0 = min(from$x0, to0$x0, to1$x0),
          y0 = min(from$y0, to0$y0, to1$y0),
