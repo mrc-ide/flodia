@@ -59,7 +59,7 @@ turny <-
          label_pos = label_from_pos, label_gap = label_from_gap,
          label_x = label_from_x, label_y = label_from_y,
          arr_width = 0, name_from = name_from, ...)
-    bendx(turn, to, label_from = label_mid, label_to = label_to,
+    bend <- bendx(turn, to, label_from = label_mid, label_to = label_to,
           pos_to = pos_to, label_from_pos = label_mid_pos,
           label_to_pos = label_to_pos, label_from_gap = label_mid_gap,
           label_from_x = label_mid_x, label_from_y = label_mid_y,
@@ -71,7 +71,8 @@ turny <-
        y0 = min(from$y0, turn$y0, to$y0),
        x1 = max(from$x1, turn$x1, to$x1),
        y1 = max(from$y1, turn$y1, to$y1),
-       x = turn$x, y = turn$y)
+       x = turn$x, y = turn$y,
+       from = from, turn1 = turn, turn2 = bend$turn, to = to)
   }
 
 
@@ -135,7 +136,7 @@ turnx <-
          label_pos = label_from_pos, label_gap = label_from_gap, arr_width = 0,
          label_x = label_from_x, label_y = label_from_y, name_from = name_from,
          ...)
-    bendy(turn, to, label_from = label_mid, label_to = label_to,
+    bend <- bendy(turn, to, label_from = label_mid, label_to = label_to,
           pos_to = pos_to, label_from_pos = label_mid_pos,
           label_to_pos = label_to_pos, label_from_gap = label_mid_gap,
           label_from_x = label_mid_x, label_from_y = label_mid_y,
@@ -147,5 +148,6 @@ turnx <-
          y0 = min(from$y0, turn$y0, to$y0),
          x1 = max(from$x1, turn$x1, to$x1),
          y1 = max(from$y1, turn$y1, to$y1),
-         x = turn$x, y = turn$y)
+         x = turn$x, y = turn$y,
+         from = from, turn1 = turn, turn2 = bend$turn, to = to)
   }

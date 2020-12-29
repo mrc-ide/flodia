@@ -63,7 +63,7 @@ flow <- function(from, to, label = NULL,
 #' @param to end node
 #' @param length single numeric specifying length, positive will result in a
 #' flow from left to right, negative from right to left. Optional parameter
-#' replacing either `to` or `from`,
+#' replacing either `to` or `from`
 #' @param label label to draw on flow
 #' @param pos a decimal between 0 and 1 giving the position of the flow relative
 #' to the nodes. Where 0 = bottom and 1 = top of the
@@ -143,7 +143,9 @@ flowx <- function(from = NULL, to = NULL, length = NULL, label = NULL,
        x0 = min(from_x, to_x),
        y0 = y,
        x1 = max(from_x, to_x),
-       y1 = y)
+       y1 = y,
+       from = from,
+       to = to)
 }
 
 
@@ -232,7 +234,9 @@ flowy <- function(from = NULL, to = NULL, length = NULL, label = NULL,
        x0 = x,
        y0 = min(from_y, to_y),
        x1 = x,
-       y1 = max(from_y, to_y))
+       y1 = max(from_y, to_y),
+       from = from,
+       to = to)
 }
 
 

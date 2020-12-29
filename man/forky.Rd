@@ -5,9 +5,10 @@
 \title{add fork between three nodes, in the y-direction}
 \usage{
 forky(
-  from,
+  from = NULL,
   to0,
   to1,
+  length = NULL,
   pos = NULL,
   label_from = NULL,
   label_to0 = NULL,
@@ -40,6 +41,10 @@ forky(
 \item{to0}{the left end node}
 
 \item{to1}{the right end node}
+
+\item{length}{single numeric specifying length, positive will result in a
+fork from bottom to top, negative from top to bottom. Optional parameter
+replacing \code{from}}
 
 \item{pos}{a decimal between 0 and 1 giving the position between \code{from}, and
 the closest of \code{to0} and \code{to1} at which to split the fork.}

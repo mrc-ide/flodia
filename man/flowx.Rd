@@ -34,7 +34,7 @@ flowx(
 
 \item{length}{single numeric specifying length, positive will result in a
 flow from left to right, negative from right to left. Optional parameter
-replacing either \code{to} or \code{from},}
+replacing either \code{to} or \code{from}}
 
 \item{label}{label to draw on flow}
 

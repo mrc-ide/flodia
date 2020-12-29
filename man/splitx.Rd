@@ -31,34 +31,6 @@ splitx(
   name_to1 = deparse(substitute(to1)),
   ...
 )
-
-splitx(
-  from,
-  to0,
-  to1,
-  label_from = NULL,
-  label_to0 = NULL,
-  label_to1 = NULL,
-  pos_from = NULL,
-  pos_to = NULL,
-  label_from_pos = NULL,
-  label_to0_pos = NULL,
-  label_to1_pos = NULL,
-  label_from_gap = NULL,
-  label_to0_gap = NULL,
-  label_to1_gap = NULL,
-  label_from_x = NULL,
-  label_to0_x = NULL,
-  label_to1_x = NULL,
-  label_from_y = NULL,
-  label_to0_y = NULL,
-  label_to1_y = NULL,
-  arr_width = NULL,
-  name_from = deparse(substitute(from)),
-  name_to0 = deparse(substitute(to0)),
-  name_to1 = deparse(substitute(to1)),
-  ...
-)
 }
 \arguments{
 \item{from}{start node}
@@ -127,11 +99,7 @@ flow into \code{to1} to draw \code{label_to1}, where 0 = start and 1 = end}
 }
 \value{
 returns the start and end points of the flow
-
-returns the start and end points of the flow
 }
 \description{
 add split between three nodes, in the x-direction
-
-add split between three nodes, in direction x
 }

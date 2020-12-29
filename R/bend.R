@@ -39,15 +39,15 @@ bendx <- function(from, to, label_from = NULL, label_to = NULL, pos_from = NULL,
                   name_from = deparse(substitute(from)),
                   name_to = deparse(substitute(to)), ...) {
 
-  mid <- node(x = calc_pos(to$x0, to$x1, pos_to),
+  turn <- node(x = calc_pos(to$x0, to$x1, pos_to),
               y = calc_pos(from$y0, from$y1, pos_from),
               r = 0)
 
-  flowx(from, mid, pos = pos_from, arr_width = 0, label = label_from,
+  flowx(from, turn, pos = pos_from, arr_width = 0, label = label_from,
        label_pos = label_from_pos, label_gap = label_from_gap,
        label_x = label_from_x, label_y = label_from_y,
        name_from = name_from, ...)
-  flowy(mid, to, label = label_to, label_pos = label_to_pos,
+  flowy(turn, to, label = label_to, label_pos = label_to_pos,
        label_gap = label_to_gap, arr_width = arr_width,
        label_x = label_to_x, label_y = label_to_y,
        name_to = name_to, ...)
@@ -56,7 +56,8 @@ bendx <- function(from, to, label_from = NULL, label_to = NULL, pos_from = NULL,
        y0 = min(from$y0, to$y0),
        x1 = max(from$x0, to$x0),
        y1 = max(from$y0, to$y0),
-       x = mid$x, y = mid$y)
+       x = turn$x, y = turn$y,
+       from = from, turn = turn, to = to)
 }
 
 
@@ -101,15 +102,15 @@ bendy <- function(from, to, label_from = NULL, label_to = NULL, pos_from = NULL,
                   name_from = deparse(substitute(from)),
                   name_to = deparse(substitute(to)), ...) {
 
-  mid <- node(x = calc_pos(from$x0, from$x1, pos_from),
+  turn <- node(x = calc_pos(from$x0, from$x1, pos_from),
               y = calc_pos(to$y0, to$y1, pos_to),
               r = 0)
-  flowy(from, mid, pos = pos_from, label = label_from,
+  flowy(from, turn, pos = pos_from, label = label_from,
         label_pos = label_from_pos, arr_width = 0,
         label_gap = label_from_gap,
         label_x = label_from_x, label_y = label_from_y,
         name_from = name_from, ...)
-  flowx(mid, to, label = label_to, label_pos = label_to_pos,
+  flowx(turn, to, label = label_to, label_pos = label_to_pos,
         label_gap = label_to_gap, arr_width = arr_width,
         label_x = label_to_x, label_y = label_to_y,
         name_to = name_to, ...)
@@ -118,5 +119,6 @@ bendy <- function(from, to, label_from = NULL, label_to = NULL, pos_from = NULL,
        y0 = min(from$y0, to$y0),
        x1 = max(from$x0, to$x0),
        y1 = max(from$y0, to$y0),
-       x = mid$x, y = mid$y)
+       x = turn$x, y = turn$y,
+       from = from, turn = turn, to = to)
 }
