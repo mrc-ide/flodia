@@ -2,6 +2,7 @@
 * improve `group()`
 * simplify labelling in turnx/y functions
 * remove unused arguments in `node()`
+* add vignette
 
 # flodia 0.0.8
 
