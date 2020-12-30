@@ -11,13 +11,12 @@ node(
   label = "",
   rx = r,
   ry = r,
-  x_root = 0,
-  y_root = 0,
   node_col = "grey80",
-  border = "black",
+  border_col = "black",
   label_font = 1,
   label_col = "black",
-  label_cex = 1
+  label_cex = 1,
+  ...
 )
 }
 \arguments{
@@ -33,19 +32,17 @@ node(
 
 \item{ry}{radius of node in y-direction}
 
-\item{x_root}{shift from x = 0 (default = 0)}
-
-\item{y_root}{shift from y = 0 (default = 0)}
-
 \item{node_col}{colour of node}
 
-\item{border}{colour of node border}
+\item{border_col}{colour of node border}
 
-\item{label_font}{label font, see par()}
+\item{label_font}{label font, see \code{par()}}
 
-\item{label_col}{colour of lavel}
+\item{label_col}{colour of \code{label}}
 
-\item{label_cex}{size of label text}
+\item{label_cex}{size of \code{label} text}
+
+\item{...}{other formatting arguments to \code{rect()}}
 }
 \description{
 add a node
