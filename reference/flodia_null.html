@@ -128,7 +128,7 @@
     <p>run a flodia without plotting (e.g to extract co-ordinates)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>flodia_null</span><span class='op'>(</span><span class='va'>f</span>, oma <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>flodia_null</span><span class='op'>(</span><span class='va'>f</span>, args <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>, oma <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fl'>0.1</span>, <span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,8 +138,13 @@
       <td><p>flodia plot function</p></td>
     </tr>
     <tr>
+      <th>args</th>
+      <td><p>list of named arguments to <code>f</code></p></td>
+    </tr>
+    <tr>
       <th>oma</th>
-      <td><p>single numeric outer margin of plot, default is 0.1</p></td>
+      <td><p>numeric of length 4 specifying outer margin of plot, at x0, y0,
+x1, and y1. Default is 0.1</p></td>
     </tr>
     </table>
 

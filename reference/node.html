@@ -135,13 +135,12 @@
   label <span class='op'>=</span> <span class='st'>""</span>,
   rx <span class='op'>=</span> <span class='va'>r</span>,
   ry <span class='op'>=</span> <span class='va'>r</span>,
-  x_root <span class='op'>=</span> <span class='fl'>0</span>,
-  y_root <span class='op'>=</span> <span class='fl'>0</span>,
   node_col <span class='op'>=</span> <span class='st'>"grey80"</span>,
-  border <span class='op'>=</span> <span class='st'>"black"</span>,
+  border_col <span class='op'>=</span> <span class='st'>"black"</span>,
   label_font <span class='op'>=</span> <span class='fl'>1</span>,
   label_col <span class='op'>=</span> <span class='st'>"black"</span>,
-  label_cex <span class='op'>=</span> <span class='fl'>1</span>
+  label_cex <span class='op'>=</span> <span class='fl'>1</span>,
+  <span class='va'>...</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -172,32 +171,28 @@
       <td><p>radius of node in y-direction</p></td>
     </tr>
     <tr>
-      <th>x_root</th>
-      <td><p>shift from x = 0 (default = 0)</p></td>
-    </tr>
-    <tr>
-      <th>y_root</th>
-      <td><p>shift from y = 0 (default = 0)</p></td>
-    </tr>
-    <tr>
       <th>node_col</th>
       <td><p>colour of node</p></td>
     </tr>
     <tr>
-      <th>border</th>
+      <th>border_col</th>
       <td><p>colour of node border</p></td>
     </tr>
     <tr>
       <th>label_font</th>
-      <td><p>label font, see par()</p></td>
+      <td><p>label font, see <code><a href='https://rdrr.io/r/graphics/par.html'>par()</a></code></p></td>
     </tr>
     <tr>
       <th>label_col</th>
-      <td><p>colour of lavel</p></td>
+      <td><p>colour of <code>label</code></p></td>
     </tr>
     <tr>
       <th>label_cex</th>
-      <td><p>size of label text</p></td>
+      <td><p>size of <code>label</code> text</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>other formatting arguments to <code><a href='https://rdrr.io/r/graphics/rect.html'>rect()</a></code></p></td>
     </tr>
     </table>
 

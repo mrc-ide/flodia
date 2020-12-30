@@ -128,39 +128,84 @@
     <p>group a set of nodes and flows</p>
     </div>
 
-    <pre class="usage"><span class='fu'>group</span><span class='op'>(</span><span class='va'>x0</span>, <span class='va'>y0</span>, <span class='va'>x1</span>, <span class='va'>y1</span>, gap <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fl'>0.1</span>, <span class='fl'>4</span><span class='op'>)</span>, col <span class='op'>=</span> <span class='st'>"grey90"</span>, border <span class='op'>=</span> <span class='st'>"black"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>group</span><span class='op'>(</span>
+  <span class='va'>f</span>,
+  args <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
+  oma <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fl'>0.1</span>, <span class='fl'>4</span><span class='op'>)</span>,
+  group_col <span class='op'>=</span> <span class='cn'>NULL</span>,
+  border_col <span class='op'>=</span> <span class='st'>"black"</span>,
+  label <span class='op'>=</span> <span class='st'>""</span>,
+  label_pos_x <span class='op'>=</span> <span class='fl'>0.02</span>,
+  label_pos_y <span class='op'>=</span> <span class='fl'>0.9</span>,
+  label_font <span class='op'>=</span> <span class='fl'>1</span>,
+  label_col <span class='op'>=</span> <span class='st'>"black"</span>,
+  label_cex <span class='op'>=</span> <span class='fl'>1</span>,
+  label_x <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_y <span class='op'>=</span> <span class='cn'>NULL</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x0</th>
-      <td><p>left-most x</p></td>
+      <th>f</th>
+      <td><p>flodia plot function</p></td>
     </tr>
     <tr>
-      <th>y0</th>
-      <td><p>bottom-most y</p></td>
+      <th>args</th>
+      <td><p>list of named arguments to <code>f</code></p></td>
     </tr>
     <tr>
-      <th>x1</th>
-      <td><p>right-most x</p></td>
-    </tr>
-    <tr>
-      <th>y1</th>
-      <td><p>top-most y</p></td>
-    </tr>
-    <tr>
-      <th>gap</th>
+      <th>oma</th>
       <td><p>required border around nodes, vector of length 4 specifying:
 bottom, left, top, right. defaults to 0.1 on all sides</p></td>
     </tr>
     <tr>
-      <th>col</th>
+      <th>group_col</th>
       <td><p>colour of group box</p></td>
     </tr>
     <tr>
-      <th>border</th>
+      <th>border_col</th>
       <td><p>colour of group border</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>label to draw on group</p></td>
+    </tr>
+    <tr>
+      <th>label_pos_x</th>
+      <td><p>a decimal between 0 and 1 giving the position on the group
+to draw <code>label</code>, where 0 = left and 1 = right</p></td>
+    </tr>
+    <tr>
+      <th>label_pos_y</th>
+      <td><p>a decimal between 0 and 1 giving the position on the group
+to draw <code>label</code>, where 0 = bottom and 1 = top</p></td>
+    </tr>
+    <tr>
+      <th>label_font</th>
+      <td><p>font of <code>label</code>, defaults to 1</p></td>
+    </tr>
+    <tr>
+      <th>label_col</th>
+      <td><p>colour of <code>label</code>, defaults to black</p></td>
+    </tr>
+    <tr>
+      <th>label_cex</th>
+      <td><p>label cex, defaults to 1</p></td>
+    </tr>
+    <tr>
+      <th>label_x</th>
+      <td><p>x co-ordinate of label position, overrides <code>label_pos_x</code></p></td>
+    </tr>
+    <tr>
+      <th>label_y</th>
+      <td><p>y co-ordinate of label position, overrides <code>label_pos_y</code></p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>further arguments to <code><a href='https://rdrr.io/r/graphics/rect.html'>rect()</a></code> for formatting group</p></td>
     </tr>
     </table>
 

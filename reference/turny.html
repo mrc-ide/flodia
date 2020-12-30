@@ -130,25 +130,15 @@
 
     <pre class="usage"><span class='fu'>turny</span><span class='op'>(</span>
   <span class='va'>from</span>,
-  <span class='va'>mid</span>,
+  <span class='va'>mid_y</span>,
   <span class='va'>to</span>,
-  label_from <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_mid <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_to <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label <span class='op'>=</span> <span class='cn'>NULL</span>,
   pos_from <span class='op'>=</span> <span class='cn'>NULL</span>,
   pos_to <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_from_pos <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_mid_pos <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_to_pos <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_from_gap <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_mid_gap <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_to_gap <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_from_x <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_mid_x <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_to_x <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_from_y <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_mid_y <span class='op'>=</span> <span class='cn'>NULL</span>,
-  label_to_y <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_pos <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_gap <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_x <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_y <span class='op'>=</span> <span class='cn'>NULL</span>,
   arr_width <span class='op'>=</span> <span class='cn'>NULL</span>,
   name_from <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span><span class='op'>)</span>,
   name_to <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>to</span><span class='op'>)</span><span class='op'>)</span>,
@@ -163,24 +153,16 @@
       <td><p>start node</p></td>
     </tr>
     <tr>
-      <th>mid</th>
-      <td><p>the y co-ordinate of the turn</p></td>
+      <th>mid_y</th>
+      <td><p>the y co-ordinate of the mid flow</p></td>
     </tr>
     <tr>
       <th>to</th>
       <td><p>the end node</p></td>
     </tr>
     <tr>
-      <th>label_from</th>
-      <td><p>label to draw on the flow out of <code>from</code></p></td>
-    </tr>
-    <tr>
-      <th>label_mid</th>
-      <td><p>label to draw on the <code>mid</code> flow</p></td>
-    </tr>
-    <tr>
-      <th>label_to</th>
-      <td><p>label to draw on the flow into <code>to</code></p></td>
+      <th>label</th>
+      <td><p>label to draw on the mid flow</p></td>
     </tr>
     <tr>
       <th>pos_from</th>
@@ -193,64 +175,22 @@ flow out of <code>from</code>, where 0 = left and 1 = right</p></td>
 flow to node <code>to</code>, where 0 = left and 1 = right</p></td>
     </tr>
     <tr>
-      <th>label_from_pos</th>
+      <th>label_pos</th>
       <td><p>a decimal between 0 and 1 giving the position along the
-flow out of <code>from</code> to draw <code>label_from</code>, where 0 = bottom and 1 = top</p></td>
+<code>mid</code> flow to draw <code>label</code>, where 0 = left and 1 = right</p></td>
     </tr>
     <tr>
-      <th>label_mid_pos</th>
-      <td><p>a decimal between 0 and 1 giving the position along the
-<code>mid</code> flow to draw <code>label_mid</code>, where 0 = left and 1 = right</p></td>
-    </tr>
-    <tr>
-      <th>label_to_pos</th>
-      <td><p>a decimal between 0 and 1 giving the position along the
-flow into <code>to</code> to draw <code>label_to</code>, where 0 = bottom and 1 = top</p></td>
-    </tr>
-    <tr>
-      <th>label_from_gap</th>
-      <td><p>distance from the flow out of <code>from</code> at which to draw
-<code>label_from</code> default = 0.05</p></td>
-    </tr>
-    <tr>
-      <th>label_mid_gap</th>
+      <th>label_gap</th>
       <td><p>distance from the <code>mid</code> flow at which to draw
-<code>label_mid</code> default = 0.05</p></td>
+<code>label</code> default = 0.05</p></td>
     </tr>
     <tr>
-      <th>label_to_gap</th>
-      <td><p>distance from the flow into <code>to</code> at which to draw
-<code>label_to</code> default = 0.05</p></td>
+      <th>label_x</th>
+      <td><p>x co-ordinate of <code>label</code> position, overrides use of <code>label_pos</code></p></td>
     </tr>
     <tr>
-      <th>label_from_x</th>
-      <td><p>x co-ordinate of <code>label_from</code> position, overrides use of
-<code>label_from_gap</code></p></td>
-    </tr>
-    <tr>
-      <th>label_mid_x</th>
-      <td><p>x co-ordinate of <code>label_mid</code> position, overrides use of
-<code>label_mid_pos</code></p></td>
-    </tr>
-    <tr>
-      <th>label_to_x</th>
-      <td><p>x co-ordinate of <code>label_to</code> position, overrides use of
-<code>label_to_gap</code></p></td>
-    </tr>
-    <tr>
-      <th>label_from_y</th>
-      <td><p>y co-ordinate of <code>label_from</code> position, overrides use of
-<code>label_from_pos</code></p></td>
-    </tr>
-    <tr>
-      <th>label_mid_y</th>
-      <td><p>y co-ordinate of <code>label_mid</code> position, overrides use of
-<code>label_mid_gap</code></p></td>
-    </tr>
-    <tr>
-      <th>label_to_y</th>
-      <td><p>y co-ordinate of <code>label_to</code> position, overrides use of
-<code>label_to_pos</code></p></td>
+      <th>label_y</th>
+      <td><p>y co-ordinate of <code>label</code> position, overrides use of <code>label_gap</code></p></td>
     </tr>
     <tr>
       <th>arr_width</th>
