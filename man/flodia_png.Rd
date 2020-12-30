@@ -4,7 +4,15 @@
 \alias{flodia_png}
 \title{save a flodia}
 \usage{
-flodia_png(f, filepath, width = 1200, res = 200, oma = 0.1, ...)
+flodia_png(
+  f,
+  filepath,
+  width = 1200,
+  res = 200,
+  oma = rep(0.1, 4),
+  args = list(),
+  ...
+)
 }
 \arguments{
 \item{f}{flodia plot function}
@@ -16,7 +24,10 @@ based on plot dimensions)}
 
 \item{res}{resolution of plot default = 200 dpi}
 
-\item{oma}{single numeric outer margin of plot, default is 0.1}
+\item{oma}{numeric of length 4 specifying outer margin of plot, at x0, y0,
+x1, and y1. Default is 0.1}
+
+\item{args}{list of named arguments to \code{f}}
 
 \item{...}{other arguments to png()}
 }

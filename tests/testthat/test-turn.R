@@ -11,15 +11,12 @@ test_that("turnx and turny work as expected", {
     left <- s$y0 -  r
     right <- i$x1 + r
 
-    turny(i, top, s, label_mid = expression(gamma), arr_lty = 2)
-    turny(i2, bottom, s2, label_mid = "under", label_mid_gap = -0.05,
-          label_from = "low", label_to = "high",
-          label_from_pos = 0.8, label_to_pos = 0.8,
+    turny(i, top, s, label = expression(gamma), arr_lty = 2)
+    turny(i2, bottom, s2, label = "under", label_gap = -0.05,
           arr_col = mid_palette("bupu"), pos_from = 0.2, pos_to = 0.8)
-    turnx(i, right, i2, pos_from = 0.2, pos_to = 0.8, label_mid = "inside",
-          label_mid_gap = -0.1, label_from = "top", label_to = "bottom",
-          label_to_gap = -0.05, label_to_pos = 0.2)
-    turnx(s2, left, s, label_mid = "inside", label_mid_gap = 0.1, lwd = 2)
+    turnx(i, right, i2, pos_from = 0.2, pos_to = 0.8, label = "inside",
+          label_gap = -0.1)
+    turnx(s2, left, s, label = "inside", label_gap = 0.1, lwd = 2)
     list(x0 = left, x1 = right, y0 = bottom, y1 = top)
   }
 
