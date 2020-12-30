@@ -1,3 +1,9 @@
+# flodia 0.0.9
+* improve `group()`
+* simplify labelling in turnx/y functions
+* remove unused arguments in `node()`
+* add vignette
+
 # flodia 0.0.8
 
 * allow flowx/y, forkx/y and splitx/y to be optionally determined by a length
