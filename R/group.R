@@ -1,20 +1,44 @@
 #' @title group a set of nodes and flows
-#' @param x0 left-most x
-#' @param y0 bottom-most y
-#' @param x1 right-most x
-#' @param y1 top-most y
-#' @param gap required border around nodes, vector of length 4 specifying:
+#' @param f flodia plot function
+#' @param args list of named arguments to `f`
+#' @param oma required border around nodes, vector of length 4 specifying:
 #' bottom, left, top, right. defaults to 0.1 on all sides
-#' @param col colour of group box
-#' @param border colour of group border
+#' @param group_col colour of group box
+#' @param border_col colour of group border
+#' @param label label to draw on group
+#' @param label_pos_x a decimal between 0 and 1 giving the position on the group
+#' to draw `label`, where 0 = left and 1 = right
+#' @param label_pos_y a decimal between 0 and 1 giving the position on the group
+#' to draw `label`, where 0 = bottom and 1 = top
+#' @param label_x x co-ordinate of label position, overrides `label_pos_x`
+#' @param label_y y co-ordinate of label position, overrides `label_pos_y`
+#' @param label_col colour of `label`, defaults to black
+#' @param label_font font of `label`, defaults to 1
+#' @param label_cex label cex, defaults to 1
+#' @param ... further arguments to `rect()` for formatting group
 #' @return coordinates of group
 #' @export
-group <- function(x0, y0, x1, y1, gap = rep(0.1, 4), col = "grey90",
-                  border = "black") {
-  ret <- list(x0 = x0 - gap[2], y0 = y0 - gap[1],
-              x1 = x1 + gap[4], y1 = y1 + gap[3])
-  ret$x <- calc_pos(ret$x0, ret$x1)
-  ret$y <- calc_pos(ret$y0, ret$y1)
-  rect(ret$x0, ret$y0, ret$x1, ret$y1, col = col, border = border)
-  ret
+group <- function(f, args = list(), oma = rep(0.1, 4), group_col = NULL,
+                  border_col = "black",
+                  label = "", label_pos_x = 0.02, label_pos_y = 0.9,
+                  label_font = 1, label_col = "black", label_cex = 1,
+                  label_x = NULL, label_y = NULL, ...) {
+
+  g <- invisible(do.call(f, args))
+
+  g$x0 <- g$x0 - oma[2]
+  g$y0 <- g$y0 - oma[1]
+  g$x1 <- g$x1 + oma[4]
+  g$y1 <- g$y1 + oma[3]
+
+  label_x <- label_x %||% calc_pos(g$x0, g$x1, label_pos_x)
+  label_y <- label_y %||% calc_pos(g$y0, g$y1, label_pos_y)
+
+  rect(g$x0, g$y0, g$x1, g$y1, col = group_col, border = border_col, ...)
+  text(x = label_x, y = label_y, labels = label, adj = 0, font = label_font,
+       cex = label_cex, col = label_col)
+
+  do.call(f, args)
+
+  g
 }
