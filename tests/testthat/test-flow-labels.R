@@ -42,11 +42,9 @@ test_that("can specify exact x and y co-ordinates of flow labels", {
                   label_from_y = ly2, label_from_x = lx4,
                   label_to0 = "ge", label_to0_x = lx3,
                   label_to1 = "gh", label_to1_x = lx4)
-    ba <- turnx(b, lx0 - 0.1, a,
-                label_from = "ba1", label_mid = "ba2", label_to = "ba3",
-                label_from_x = lx0, label_to_x = lx0,
-                label_mid_x = lx0, label_mid_y = ly1)
-    da <- turny(d, f$y, a, label_mid = "da", label_mid_x = lx1)
+    ba <- turnx(b, lx0 - 0.1, a, label = "ba",
+                label_x = lx0, label_y = ly1)
+    da <- turny(d, f$y, a, label = "da", label_x = lx1)
 
     list(x0 = ba$x0, x1 = h$x1, y0 = e$y0, y1 = f$y1)
   }

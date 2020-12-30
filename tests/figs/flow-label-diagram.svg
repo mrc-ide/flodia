@@ -79,8 +79,6 @@
 <line x1='363.92' y1='376.89' x2='363.92' y2='465.78' style='stroke-width: 0.75;' />
 <polygon points='362.16,460.49 363.92,465.78 365.68,460.49 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='375.33' y='432.75' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='10.12px' lengthAdjust='spacingAndGlyphs'>ce</text>
-<rect x='363.92' y='376.89' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
-<line x1='246.27' y1='376.89' x2='363.92' y2='376.89' style='stroke-width: 0.75;' />
 <line x1='363.92' y1='376.89' x2='363.92' y2='169.48' style='stroke-width: 0.75;' />
 <polygon points='365.68,174.77 363.92,169.48 362.16,174.77 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='375.33' y='297.36' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='10.12px' lengthAdjust='spacingAndGlyphs'>cd</text>
@@ -90,20 +88,16 @@
 <line x1='552.16' y1='495.41' x2='387.45' y2='495.41' style='stroke-width: 0.75;' />
 <polygon points='392.74,493.64 387.45,495.41 392.74,497.17 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='480.95' y='482.18' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='10.66px' lengthAdjust='spacingAndGlyphs'>ge</text>
-<rect x='552.16' y='495.41' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
-<line x1='552.16' y1='228.74' x2='552.16' y2='495.41' style='stroke-width: 0.75;' />
 <line x1='552.16' y1='495.41' x2='622.75' y2='495.41' style='stroke-width: 0.75;' />
 <polygon points='617.46,497.17 622.75,495.41 617.46,493.64 ' style='stroke-width: 0.00; fill: #000000;' />
 <text x='565.65' y='483.08' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='10.66px' lengthAdjust='spacingAndGlyphs'>gh</text>
 <rect x='50.20' y='376.89' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='105.10' y1='376.89' x2='50.20' y2='376.89' style='stroke-width: 0.75;' />
-<text x='65.73' y='365.50' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='15.98px' lengthAdjust='spacingAndGlyphs'>ba1</text>
 <rect x='50.20' y='139.85' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='50.20' y1='376.89' x2='50.20' y2='139.85' style='stroke-width: 0.75;' />
-<text x='65.73' y='226.24' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='15.98px' lengthAdjust='spacingAndGlyphs'>ba2</text>
+<text x='68.40' y='226.24' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='10.66px' lengthAdjust='spacingAndGlyphs'>ba</text>
 <line x1='50.20' y1='139.85' x2='152.16' y2='139.85' style='stroke-width: 0.75;' />
 <polygon points='146.87,141.62 152.16,139.85 146.87,138.09 ' style='stroke-width: 0.00; fill: #000000;' />
-<text x='65.73' y='128.47' style='font-size: 9.60px; font-style: italic; font-family: Liberation Sans;' textLength='15.98px' lengthAdjust='spacingAndGlyphs'>ba3</text>
 <rect x='363.92' y='80.59' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
 <line x1='363.92' y1='110.22' x2='363.92' y2='80.59' style='stroke-width: 0.75;' />
 <rect x='175.69' y='80.59' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />

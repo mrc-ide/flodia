@@ -20,6 +20,8 @@ bendx(
   label_from_y = NULL,
   label_to_y = NULL,
   arr_width = NULL,
+  name_from = deparse(substitute(from)),
+  name_to = deparse(substitute(to)),
   ...
 )
 }
@@ -63,6 +65,10 @@ flow into \code{to} to draw \code{label_to}, where 0 = start and 1 = end}
 \code{label_to_pos} and / or \code{label_to_gap}}
 
 \item{arr_width}{width of arrow, defaults to same as \code{\link[=flow]{flow()}}}
+
+\item{name_from}{internal argument used for informative error messages}
+
+\item{name_to}{internal argument used for informative error messages}
 
 \item{...}{additional formatting arguments to \code{\link[=flow]{flow()}}}
 }

@@ -24,6 +24,8 @@
 #'@param label_to_y y co-ordinate of `label_to` position, overrides use of
 #' `label_to_pos` and / or `label_to_gap`
 #' @param arr_width width of arrow, defaults to same as [flow()]
+#' @param name_from internal argument used for informative error messages
+#' @param name_to internal argument used for informative error messages
 #' @param ... additional formatting arguments to [flow()]
 #' @return returns the start and end points of the flow
 #' @export
@@ -33,20 +35,29 @@ bendx <- function(from, to, label_from = NULL, label_to = NULL, pos_from = NULL,
                   label_from_gap = NULL, label_to_gap = NULL,
                   label_from_x = NULL, label_to_x = NULL,
                   label_from_y = NULL, label_to_y = NULL,
-                  arr_width = NULL, ...) {
+                  arr_width = NULL,
+                  name_from = deparse(substitute(from)),
+                  name_to = deparse(substitute(to)), ...) {
 
-  mid <- node(x = calc_pos(to$x0, to$x1, pos_to),
-                      y = calc_pos(from$y0, from$y1, pos_from),
-                      r = 0)
+  turn <- node(x = calc_pos(to$x0, to$x1, pos_to),
+               y = calc_pos(from$y0, from$y1, pos_from),
+               r = 0)
 
-  flow(from, mid, pos = pos_from, arr_width = 0, label = label_from,
-       label_pos = label_from_pos, label_gap = label_from_gap,
-       label_x = label_from_x, label_y = label_from_y, ...)
-  flow(mid, to, label = label_to, label_pos = label_to_pos,
-       label_gap = label_to_gap, arr_width = arr_width,
-       label_x = label_to_x, label_y = label_to_y, ...)
+  flowx(from, turn, pos = pos_from, arr_width = 0, label = label_from,
+        label_pos = label_from_pos, label_gap = label_from_gap,
+        label_x = label_from_x, label_y = label_from_y,
+        name_from = name_from, ...)
+  flowy(turn, to, label = label_to, label_pos = label_to_pos,
+        label_gap = label_to_gap, arr_width = arr_width,
+        label_x = label_to_x, label_y = label_to_y,
+        name_to = name_to, ...)
 
-  list(x0 = from$x1, y0 = mid$y, x1 = mid$x, y1 = to$y0, x = mid$x, y = mid$y)
+  list(x0 = min(from$x0, to$x0),
+       y0 = min(from$y0, to$y0),
+       x1 = max(from$x0, to$x0),
+       y1 = max(from$y0, to$y0),
+       x = turn$x, y = turn$y,
+       from = from, turn = turn, to = to)
 }
 
 
@@ -76,27 +87,38 @@ bendx <- function(from, to, label_from = NULL, label_to = NULL, pos_from = NULL,
 #'@param label_to_y y co-ordinate of `label_to` position, overrides use of
 #' `label_to_pos` and / or `label_to_gap`
 #' @param arr_width width of arrow, defaults to same as [flow()]
+#' @param name_from internal argument used for informative error messages
+#' @param name_to internal argument used for informative error messages
 #' @param ... additional formatting arguments to [flow()]
 #' @return returns the start and end points of the flow
 #' @export
 
 bendy <- function(from, to, label_from = NULL, label_to = NULL, pos_from = NULL,
                   pos_to = NULL, label_from_pos = NULL, label_to_pos = NULL,
-                  label_from_gap = NULL, label_to_gap = NULL, arr_width = NULL,
+                  label_from_gap = NULL, label_to_gap = NULL,
                   label_from_x = NULL, label_to_x = NULL,
                   label_from_y = NULL, label_to_y = NULL,
-                  ...)  {
+                  arr_width = NULL,
+                  name_from = deparse(substitute(from)),
+                  name_to = deparse(substitute(to)), ...) {
 
-  mid <- node(x = calc_pos(from$x0, from$x1, pos_from),
-                      y = calc_pos(to$y0, to$y1, pos_to),
-                      r = 0)
-  flow(from, mid, pos = pos_from, label = label_from,
-       label_pos = label_from_pos, arr_width = 0,
-       label_gap = label_from_gap,
-       label_x = label_from_x, label_y = label_from_y, ...)
-  flow(mid, to, label = label_to, label_pos = label_to_pos,
-       label_gap = label_to_gap, arr_width = arr_width,
-       label_x = label_to_x, label_y = label_to_y, ...)
+  turn <- node(x = calc_pos(from$x0, from$x1, pos_from),
+               y = calc_pos(to$y0, to$y1, pos_to),
+               r = 0)
+  flowy(from, turn, pos = pos_from, label = label_from,
+        label_pos = label_from_pos, arr_width = 0,
+        label_gap = label_from_gap,
+        label_x = label_from_x, label_y = label_from_y,
+        name_from = name_from, ...)
+  flowx(turn, to, label = label_to, label_pos = label_to_pos,
+        label_gap = label_to_gap, arr_width = arr_width,
+        label_x = label_to_x, label_y = label_to_y,
+        name_to = name_to, ...)
 
-  list(x0 = mid$x, y0 = from$y1, x1 = to$x0, y1 = mid$y, x = mid$x, y = mid$y)
+  list(x0 = min(from$x0, to$x0),
+       y0 = min(from$y0, to$y0),
+       x1 = max(from$x0, to$x0),
+       y1 = max(from$y0, to$y0),
+       x = turn$x, y = turn$y,
+       from = from, turn = turn, to = to)
 }

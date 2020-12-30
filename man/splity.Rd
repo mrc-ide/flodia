@@ -2,12 +2,13 @@
 % Please edit documentation in R/split.R
 \name{splity}
 \alias{splity}
-\title{add split between three nodes, in direction y}
+\title{add split between three nodes, in the y-direction}
 \usage{
 splity(
-  from,
+  from = NULL,
   to0,
   to1,
+  length = NULL,
   label_from = NULL,
   label_to0 = NULL,
   label_to1 = NULL,
@@ -26,6 +27,9 @@ splity(
   label_to0_y = NULL,
   label_to1_y = NULL,
   arr_width = NULL,
+  name_from = deparse(substitute(from)),
+  name_to0 = deparse(substitute(to0)),
+  name_to1 = deparse(substitute(to1)),
   ...
 )
 }
@@ -35,6 +39,10 @@ splity(
 \item{to0}{the left end node}
 
 \item{to1}{the right end node}
+
+\item{length}{single numeric specifying length, positive will result in a
+fork from bottom to top, negative from top to bottom. Optional parameter
+replacing \code{from}}
 
 \item{label_from}{label to draw on the flow out of \code{from}}
 
@@ -86,11 +94,17 @@ flow into \code{to1} to draw \code{label_to1}, where 0 = start and 1 = end}
 
 \item{arr_width}{width of arrow, defaults to same as \code{\link[=flow]{flow()}}}
 
+\item{name_from}{internal argument used for informative error messages}
+
+\item{name_to0}{internal argument used for informative error messages}
+
+\item{name_to1}{internal argument used for informative error messages}
+
 \item{...}{additional formatting arguments to \code{\link[=flow]{flow()}}}
 }
 \value{
 returns the start and end points of the flow
 }
 \description{
-add split between three nodes, in direction y
+add split between three nodes, in the y-direction
 }

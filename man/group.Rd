@@ -4,23 +4,54 @@
 \alias{group}
 \title{group a set of nodes and flows}
 \usage{
-group(x0, y0, x1, y1, gap = rep(0.1, 4), col = "grey90", border = "black")
+group(
+  f,
+  args = list(),
+  oma = rep(0.1, 4),
+  group_col = NULL,
+  border_col = "black",
+  label = "",
+  label_pos_x = 0.02,
+  label_pos_y = 0.9,
+  label_font = 1,
+  label_col = "black",
+  label_cex = 1,
+  label_x = NULL,
+  label_y = NULL,
+  ...
+)
 }
 \arguments{
-\item{x0}{left-most x}
+\item{f}{flodia plot function}
 
-\item{y0}{bottom-most y}
+\item{args}{list of named arguments to \code{f}}
 
-\item{x1}{right-most x}
-
-\item{y1}{top-most y}
-
-\item{gap}{required border around nodes, vector of length 4 specifying:
+\item{oma}{required border around nodes, vector of length 4 specifying:
 bottom, left, top, right. defaults to 0.1 on all sides}
 
-\item{col}{colour of group box}
+\item{group_col}{colour of group box}
 
-\item{border}{colour of group border}
+\item{border_col}{colour of group border}
+
+\item{label}{label to draw on group}
+
+\item{label_pos_x}{a decimal between 0 and 1 giving the position on the group
+to draw \code{label}, where 0 = left and 1 = right}
+
+\item{label_pos_y}{a decimal between 0 and 1 giving the position on the group
+to draw \code{label}, where 0 = bottom and 1 = top}
+
+\item{label_font}{font of \code{label}, defaults to 1}
+
+\item{label_col}{colour of \code{label}, defaults to black}
+
+\item{label_cex}{label cex, defaults to 1}
+
+\item{label_x}{x co-ordinate of label position, overrides \code{label_pos_x}}
+
+\item{label_y}{y co-ordinate of label position, overrides \code{label_pos_y}}
+
+\item{...}{further arguments to \code{rect()} for formatting group}
 }
 \value{
 coordinates of group
