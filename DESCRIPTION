@@ -22,5 +22,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
     testthat,
-    vdiffr
+    vdiffr,
+    knitr
 VignetteBuilder: knitr
