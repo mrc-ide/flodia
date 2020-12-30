@@ -70,7 +70,7 @@ turnx <-
 #' @return returns the start and end points of the flow
 #' @export
 turny <-
-  function(from, mid_y, to, label_from = NULL, label = NULL, label_to = NULL,
+  function(from, mid_y, to, label = NULL,
            pos_from = NULL, pos_to = NULL,
            label_pos = NULL, label_gap = NULL, label_x = NULL, label_y = NULL,
            arr_width = NULL,
