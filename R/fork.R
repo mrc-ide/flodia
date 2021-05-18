@@ -17,12 +17,16 @@
 #' flow to node `to0`, where 0 = bottom and 1 = top
 #' @param pos_to1 a decimal between 0 and 1 giving the position to attach the
 #' flow to node `to1`, where 0 = bottom and 1 = top
+#' @param label_pos a decimal between 0 and 1 giving the position along the
+#' flow at which to draw the labels.
 #' @param label_from_pos a decimal between 0 and 1 giving the position along the
 #' flow out of `from` to draw `label_from`, where 0 = start and 1 = end
 #' @param label_to0_pos a decimal between 0 and 1 giving the position along the
 #' flow into `to0` to draw `label_to0`, where 0 = start and 1 = end
 #' @param label_to1_pos a decimal between 0 and 1 giving the position along the
 #' flow into `to1` to draw `label_to1`, where 0 = start and 1 = end
+#' @param label_gap distance from the flows at which to draw
+#'  labels default = 0.05
 #' @param label_from_gap distance from the flow out of `from` at which to draw
 #'  `label_from` default = 0.05
 #' @param label_to0_gap distance from the flow into `to0` at which to draw
@@ -52,9 +56,9 @@ forkx <-
   function(from = NULL, to0, to1, length = NULL, pos = NULL,
            label_from = NULL, label_to0 = NULL, label_to1 = NULL,
            pos_from = NULL, pos_to0 = NULL, pos_to1 = pos_to0,
-           label_from_pos = NULL,
+           label_pos = NULL, label_from_pos = label_pos,
            label_to0_pos = label_from_pos, label_to1_pos = label_to0_pos,
-           label_from_gap = NULL,
+           label_gap = NULL, label_from_gap = label_gap,
            label_to0_gap = label_from_gap, label_to1_gap = label_to0_gap,
            label_from_x = NULL, label_to0_x = NULL, label_to1_x = label_to0_x,
            label_from_y = NULL, label_to0_y = NULL, label_to1_y = NULL,
@@ -125,12 +129,16 @@ forkx <-
 #' flow to node `to0`, where 0 = left and 1 = right
 #' @param pos_to1 a decimal between 0 and 1 giving the position to attach the
 #' flow to node `to1`, where 0 = left and 1 = right
+#' @param label_pos a decimal between 0 and 1 giving the position along the
+#' flow at which to draw the labels.
 #' @param label_from_pos a decimal between 0 and 1 giving the position along the
 #' flow out of `from` to draw `label_from`, where 0 = start and 1 = end
 #' @param label_to0_pos a decimal between 0 and 1 giving the position along the
 #' flow into `to0` to draw `label_to0`, where 0 = start and 1 = end
 #' @param label_to1_pos a decimal between 0 and 1 giving the position along the
 #' flow into `to1` to draw `label_to1`, where 0 = start and 1 = end
+#' @param label_gap distance from the flows at which to draw
+#'  labels default = 0.05
 #' @param label_from_gap distance from the flow out of `from` at which to draw
 #'  `label_from` default = 0.05
 #' @param label_to0_gap distance from the flow into `to0` at which to draw
@@ -160,9 +168,9 @@ forky <-
   function(from = NULL, to0, to1, length = NULL, pos = NULL,
            label_from = NULL, label_to0 = NULL, label_to1 = NULL,
            pos_from = NULL, pos_to0 = NULL, pos_to1 = pos_to0,
-           label_from_pos = NULL,
+           label_pos = NULL, label_from_pos = label_pos,
            label_to0_pos = label_from_pos, label_to1_pos = label_to0_pos,
-           label_from_gap = NULL,
+           label_gap = NULL, label_from_gap = label_gap,
            label_to0_gap = label_from_gap, label_to1_gap = label_to0_gap,
            label_from_x = NULL, label_to0_x = NULL, label_to1_x = NULL,
            label_from_y = NULL, label_to0_y = NULL, label_to1_y = label_to0_y,
