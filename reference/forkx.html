@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">flodia</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.10</span>
       </span>
     </div>
 
@@ -152,10 +152,12 @@
   pos_from <span class='op'>=</span> <span class='cn'>NULL</span>,
   pos_to0 <span class='op'>=</span> <span class='cn'>NULL</span>,
   pos_to1 <span class='op'>=</span> <span class='va'>pos_to0</span>,
-  label_from_pos <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_pos <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_from_pos <span class='op'>=</span> <span class='va'>label_pos</span>,
   label_to0_pos <span class='op'>=</span> <span class='va'>label_from_pos</span>,
   label_to1_pos <span class='op'>=</span> <span class='va'>label_to0_pos</span>,
-  label_from_gap <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_gap <span class='op'>=</span> <span class='cn'>NULL</span>,
+  label_from_gap <span class='op'>=</span> <span class='va'>label_gap</span>,
   label_to0_gap <span class='op'>=</span> <span class='va'>label_from_gap</span>,
   label_to1_gap <span class='op'>=</span> <span class='va'>label_to0_gap</span>,
   label_from_x <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -165,6 +167,8 @@
   label_to0_y <span class='op'>=</span> <span class='cn'>NULL</span>,
   label_to1_y <span class='op'>=</span> <span class='cn'>NULL</span>,
   arr_width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  arr_width0 <span class='op'>=</span> <span class='va'>arr_width</span>,
+  arr_width1 <span class='op'>=</span> <span class='va'>arr_width</span>,
   name_from <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>from</span><span class='op'>)</span><span class='op'>)</span>,
   name_to0 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>to0</span><span class='op'>)</span><span class='op'>)</span>,
   name_to1 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span><span class='op'>(</span><span class='va'>to1</span><span class='op'>)</span><span class='op'>)</span>,
@@ -225,6 +229,11 @@ flow to node <code>to0</code>, where 0 = bottom and 1 = top</p></td>
 flow to node <code>to1</code>, where 0 = bottom and 1 = top</p></td>
     </tr>
     <tr>
+      <th>label_pos</th>
+      <td><p>a decimal between 0 and 1 giving the position along the
+flow at which to draw the labels.</p></td>
+    </tr>
+    <tr>
       <th>label_from_pos</th>
       <td><p>a decimal between 0 and 1 giving the position along the
 flow out of <code>from</code> to draw <code>label_from</code>, where 0 = start and 1 = end</p></td>
@@ -238,6 +247,11 @@ flow into <code>to0</code> to draw <code>label_to0</code>, where 0 = start and 1
       <th>label_to1_pos</th>
       <td><p>a decimal between 0 and 1 giving the position along the
 flow into <code>to1</code> to draw <code>label_to1</code>, where 0 = start and 1 = end</p></td>
+    </tr>
+    <tr>
+      <th>label_gap</th>
+      <td><p>distance from the flows at which to draw
+labels default = 0.05</p></td>
     </tr>
     <tr>
       <th>label_from_gap</th>
@@ -286,7 +300,15 @@ flow into <code>to1</code> to draw <code>label_to1</code>, where 0 = start and 1
     </tr>
     <tr>
       <th>arr_width</th>
-      <td><p>width of arrow, defaults to same as <code><a href='flow.html'>flow()</a></code></p></td>
+      <td><p>width of arrows, defaults to same as <code><a href='flow.html'>flow()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>arr_width0</th>
+      <td><p>width of arrow into <code>to0</code>, defaults to same as <code><a href='flow.html'>flow()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>arr_width1</th>
+      <td><p>width of arrow into <code>to1</code>, defaults to same as <code><a href='flow.html'>flow()</a></code></p></td>
     </tr>
     <tr>
       <th>name_from</th>
