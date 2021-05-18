@@ -1,3 +1,7 @@
+# flodia 0.0.10
+* allow different arrows on splitx/y and forkx/y
+* allow label_pos and label_gap as args to splitx/y and forkx/y
+
 # flodia 0.0.9
 * improve `group()`
 * simplify labelling in turnx/y functions

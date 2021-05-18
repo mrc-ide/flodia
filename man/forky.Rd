@@ -16,10 +16,12 @@ forky(
   pos_from = NULL,
   pos_to0 = NULL,
   pos_to1 = pos_to0,
-  label_from_pos = NULL,
+  label_pos = NULL,
+  label_from_pos = label_pos,
   label_to0_pos = label_from_pos,
   label_to1_pos = label_to0_pos,
-  label_from_gap = NULL,
+  label_gap = NULL,
+  label_from_gap = label_gap,
   label_to0_gap = label_from_gap,
   label_to1_gap = label_to0_gap,
   label_from_x = NULL,
@@ -29,6 +31,8 @@ forky(
   label_to0_y = NULL,
   label_to1_y = label_to0_y,
   arr_width = NULL,
+  arr_width0 = arr_width,
+  arr_width1 = arr_width,
   name_from = deparse(substitute(from)),
   name_to0 = deparse(substitute(to0)),
   name_to1 = deparse(substitute(to1)),
@@ -64,6 +68,9 @@ flow to node \code{to0}, where 0 = left and 1 = right}
 \item{pos_to1}{a decimal between 0 and 1 giving the position to attach the
 flow to node \code{to1}, where 0 = left and 1 = right}
 
+\item{label_pos}{a decimal between 0 and 1 giving the position along the
+flow at which to draw the labels.}
+
 \item{label_from_pos}{a decimal between 0 and 1 giving the position along the
 flow out of \code{from} to draw \code{label_from}, where 0 = start and 1 = end}
 
@@ -72,6 +79,9 @@ flow into \code{to0} to draw \code{label_to0}, where 0 = start and 1 = end}
 
 \item{label_to1_pos}{a decimal between 0 and 1 giving the position along the
 flow into \code{to1} to draw \code{label_to1}, where 0 = start and 1 = end}
+
+\item{label_gap}{distance from the flows at which to draw
+labels default = 0.05}
 
 \item{label_from_gap}{distance from the flow out of \code{from} at which to draw
 \code{label_from} default = 0.05}
@@ -100,7 +110,11 @@ flow into \code{to1} to draw \code{label_to1}, where 0 = start and 1 = end}
 \item{label_to1_y}{y co-ordinate of \code{label_to1} position, overrides use of
 \code{label_to1_pos} and / or \code{label_to1_gap}}
 
-\item{arr_width}{width of arrow, defaults to same as \code{\link[=flow]{flow()}}}
+\item{arr_width}{width of arrows, defaults to same as \code{\link[=flow]{flow()}}}
+
+\item{arr_width0}{width of arrow into \code{to0}, defaults to same as \code{\link[=flow]{flow()}}}
+
+\item{arr_width1}{width of arrow into \code{to1}, defaults to same as \code{\link[=flow]{flow()}}}
 
 \item{name_from}{internal argument used for informative error messages}
 

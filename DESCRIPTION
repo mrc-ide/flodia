@@ -1,6 +1,6 @@
 Package: flodia
 Title: Flow Diagrams for Compartmental Models
-Version: 0.0.9
+Version: 0.0.10
 Authors@R: 
     c(person(given = "Lilith",
              family = "Whittles",
@@ -23,5 +23,6 @@ RoxygenNote: 7.1.1
 Suggests: 
     testthat,
     vdiffr,
-    knitr
+    knitr,
+    rmarkdown
 VignetteBuilder: knitr
