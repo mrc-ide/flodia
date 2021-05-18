@@ -15,7 +15,7 @@ splitx <-
            label_to0_gap = NULL, label_to1_gap = NULL,
            label_from_x = NULL, label_to0_x = NULL, label_to1_x = NULL,
            label_from_y = NULL, label_to0_y = NULL, label_to1_y = NULL,
-           arr_width = NULL,
+           arr_width = NULL, arr_width0 = arr_width, arr_width1 = arr_width,
            name_from = deparse(substitute(from)),
            name_to0 = deparse(substitute(to0)),
            name_to1 = deparse(substitute(to1)), ...) {
@@ -43,12 +43,12 @@ splitx <-
     flowy(split, to0,
           label = label_to0, label_pos = label_to0_pos,
           label_gap = label_to0_gap, label_x = label_to0_x,
-          label_y = label_to0_y, arr_width = arr_width,
+          label_y = label_to0_y, arr_width = arr_width0,
           name_to = name_to0, ...)
     flowy(split, to1,
           label = label_to1, label_pos = label_to1_pos,
           label_gap = label_to1_gap, label_x = label_to1_x,
-          label_y = label_to1_y, arr_width = arr_width,
+          label_y = label_to1_y, arr_width = arr_width1,
           name_to = name_to1, ...)
 
     list(x0 = min(from$x0, to0$x0, to1$x0),
@@ -76,7 +76,7 @@ splity <-
            label_to0_gap = NULL, label_to1_gap = NULL,
            label_from_x = NULL, label_to0_x = NULL, label_to1_x = NULL,
            label_from_y = NULL, label_to0_y = NULL, label_to1_y = NULL,
-           arr_width = NULL,
+           arr_width = NULL, arr_width0 = arr_width, arr_width1 = arr_width,
            name_from = deparse(substitute(from)),
            name_to0 = deparse(substitute(to0)),
            name_to1 = deparse(substitute(to1)), ...) {
@@ -104,12 +104,12 @@ splity <-
     flowx(split, to0,
           label = label_to0, label_pos = label_to0_pos,
           label_gap = label_to0_gap, label_x = label_to0_x,
-          label_y = label_to0_y, arr_width = arr_width,
+          label_y = label_to0_y, arr_width = arr_width0,
           name_to = name_to0, ...)
     flowx(split, to1,
           label = label_to1, label_pos = label_to1_pos,
           label_gap = label_to1_gap, label_x = label_to1_x,
-          label_y = label_to1_y, arr_width = arr_width,
+          label_y = label_to1_y, arr_width = arr_width1,
           name_to = name_to1, ...)
 
     list(x0 = min(from$x0, to0$x0, to1$x0),
