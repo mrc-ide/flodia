@@ -24,5 +24,6 @@ Suggests:
     testthat,
     vdiffr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    markdown
 VignetteBuilder: knitr
