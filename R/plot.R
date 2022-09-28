@@ -21,7 +21,7 @@ flodia <- function(f, oma = rep(0.1, 4), args = list()) {
   z
 }
 
-#' @title save a flodia
+#' @title save a flodia as png
 #' @param f flodia plot function
 #' @param filepath desired location of output eg "test.png"
 #' @param args list of named arguments to `f`
@@ -68,4 +68,18 @@ flodia_null <- function(f, args = list(), oma = rep(0.1, 4)) {
   z$y1 <- z$y1 + oma[3]
 
   z
+}
+
+#' @title save a flodia as pdf
+#' @inheritParams flodia_png
+#' @param ... other arguments to pdf()
+#' @importFrom grDevices pdf
+#' @export
+flodia_pdf <- function (f, filepath, width = 19 / 2.5, oma = rep(0.1, 4),
+                        args = list(), ...) {
+  z <- flodia_null(f, args, oma)
+  height <- round(width * (z$y1 - z$y0) / (z$x1 - z$x0))
+  pdf(filepath, width, height, ...)
+  flodia(f, oma, args)
+  dev.off()
 }

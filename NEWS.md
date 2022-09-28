@@ -1,3 +1,6 @@
+# flodia 0.0.11
+* enable saving as pdf
+
 # flodia 0.0.10
 * allow different arrows on splitx/y and forkx/y
 * allow label_pos and label_gap as args to splitx/y and forkx/y

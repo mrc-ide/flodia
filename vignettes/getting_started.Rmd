@@ -112,7 +112,7 @@ sedar <- function(S_x = 1, S_y = 1,
   # add flows
   # connect S to E
   flowx(from = S, to = E, label = expression(lambda))
-  # connect S to A and D
+  # connect E to A and D
   forkx(from = E, to0 = A, to1 = D, label_from = expression(gamma[E]),
         label_to0 = expression(1 - p[D]),
         label_to1 = expression(p[D]))
