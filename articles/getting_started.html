@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">flodia</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.12</span>
       </span>
     </div>
 
@@ -82,13 +82,14 @@
 
       
 
-      </header><script src="getting_started_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Getting started with flodia</h1>
-                        <h4 data-toc-skip class="author">Lilith Whittles</h4>
+                        <h4 data-toc-skip class="author">Lilith
+Whittles</h4>
             
-            <h4 data-toc-skip class="date">2022-09-28</h4>
+            <h4 data-toc-skip class="date">2023-06-16</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/mrc-ide/flodia/blob/HEAD/vignettes/getting_started.Rmd" class="external-link"><code>vignettes/getting_started.Rmd</code></a></small>
       <div class="hidden name"><code>getting_started.Rmd</code></div>
@@ -100,24 +101,49 @@
 <div class="section level2">
 <h2 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
 </h2>
-<p><code>flodia</code> provides a framework for drawing flow diagrams in base R, aimed at anyone who is tired of messing about in powerpoint, but can’t quite bring themselves to learn tikz.</p>
-<p>The basic units of a <code>flodia</code> are nodes, which can be connected in a variety of ways via flows. Complex diagrams can be built by creating and grouping sub-diagrams. This is a brief tutorial on how to use the package’s main functions to quickly create flow diagrams that are clear and easy to adapt.</p>
+<p><code>flodia</code> provides a framework for drawing flow diagrams in
+base R, aimed at anyone who is tired of messing about in powerpoint, but
+can’t quite bring themselves to learn tikz.</p>
+<p>The basic units of a <code>flodia</code> are nodes, which can be
+connected in a variety of ways via flows. Complex diagrams can be built
+by creating and grouping sub-diagrams. This is a brief tutorial on how
+to use the package’s main functions to quickly create flow diagrams that
+are clear and easy to adapt.</p>
 <p>You can see an example of a <code>flodia</code> <a href="https://github.com/mrc-ide/sircovid" class="external-link">here</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="getting-started">Getting started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
 </h2>
-<p>A <code>flodia</code> takes the format of a function, in which nodes are positioned on the (x, y) grid and connected to each other via flows. Flows proceed in either the x- or y- direction (i.e. no curves or diagonal lines). The function may take arguments if you like, but it is not necessary. The only real rule is that the function must return a list containing named elements <code>x0</code>, <code>x1</code>, <code>y0</code> and <code>y1</code>, which refer to the left-, right-, bottom- and top-most co-ordinates of the <code>flodia</code>. All <code>flodia</code> objects, either nodes or flows will return a similar list, with additional elements <code>x</code> and <code>y</code> giving the mid-point of the object. Flows additionally return their <code>from</code> and <code>to</code> nodes, as well as the co-ordinates of any turn points along the length of the flow.</p>
-<p>While you can simply place nodes on the grid using their co-ordinates, it is often better to place them relative to each other, taking advantage of their output <code>x0</code>, <code>x1</code>, <code>y0</code> and <code>y1</code> co-ordinates. This will generally save you time when tweaking the <code>flodia</code>, and is invaluable when grouping together multiple diagrams, as we shall see later.</p>
+<p>A <code>flodia</code> takes the format of a function, in which nodes
+are positioned on the (x, y) grid and connected to each other via flows.
+Flows proceed in either the x- or y- direction (i.e. no curves or
+diagonal lines). The function may take arguments if you like, but it is
+not necessary. The only real rule is that the function must return a
+list containing named elements <code>x0</code>, <code>x1</code>,
+<code>y0</code> and <code>y1</code>, which refer to the left-, right-,
+bottom- and top-most co-ordinates of the <code>flodia</code>. All
+<code>flodia</code> objects, either nodes or flows will return a similar
+list, with additional elements <code>x</code> and <code>y</code> giving
+the mid-point of the object. Flows additionally return their
+<code>from</code> and <code>to</code> nodes, as well as the co-ordinates
+of any turn points along the length of the flow.</p>
+<p>While you can simply place nodes on the grid using their
+co-ordinates, it is often better to place them relative to each other,
+taking advantage of their output <code>x0</code>, <code>x1</code>,
+<code>y0</code> and <code>y1</code> co-ordinates. This will generally
+save you time when tweaking the <code>flodia</code>, and is invaluable
+when grouping together multiple diagrams, as we shall see later.</p>
 <div class="section level3">
 <h3 id="example-1-simple-flow-diagram">Example 1: Simple flow diagram<a class="anchor" aria-label="anchor" href="#example-1-simple-flow-diagram"></a>
 </h3>
-<p>The following code plots a simple flow diagram for a <a href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology" class="external-link">Susceptible-Infected-Recovered (SIR)</a> compartmental model. Demonstrating the use of relative node positioning, and the basic <code><a href="../reference/node.html">node()</a></code> and <code><a href="../reference/flow.html">flow()</a></code> functions.</p>
+<p>The following code plots a simple flow diagram for a <a href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology" class="external-link">Susceptible-Infected-Recovered
+(SIR)</a> compartmental model. Demonstrating the use of relative node
+positioning, and the basic <code><a href="../reference/node.html">node()</a></code> and <code><a href="../reference/flow.html">flow()</a></code>
+functions.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/mrc-ide/flodia" class="external-link">"flodia"</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">sir</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  </span>
 <span>  <span class="co"># define the radius of the nodes</span></span>
 <span>  <span class="va">r</span> <span class="op">&lt;-</span> <span class="fl">0.1</span></span>
 <span>  <span class="va">xgap</span> <span class="op">&lt;-</span> <span class="fl">0.3</span></span>
@@ -128,15 +154,19 @@
 <span>  <span class="va">I</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/node.html">node</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">S</span><span class="op">$</span><span class="va">x1</span> <span class="op">+</span> <span class="va">xgap</span>, y <span class="op">=</span> <span class="va">S</span><span class="op">$</span><span class="va">y</span>, r <span class="op">=</span> <span class="va">r</span>, label <span class="op">=</span> <span class="st">"I"</span><span class="op">)</span></span>
 <span>  <span class="co"># draw the third node xgap units to the right of the second</span></span>
 <span>  <span class="va">R</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/node.html">node</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">I</span><span class="op">$</span><span class="va">x1</span> <span class="op">+</span> <span class="va">xgap</span>, y <span class="op">=</span> <span class="va">S</span><span class="op">$</span><span class="va">y</span>, r <span class="op">=</span> <span class="va">r</span>, label <span class="op">=</span> <span class="st">"R"</span><span class="op">)</span></span>
-<span>  </span>
+<span></span>
 <span>  <span class="co"># connect the nodes together with flows</span></span>
 <span>  <span class="fu"><a href="../reference/flow.html">flow</a></span><span class="op">(</span>from <span class="op">=</span> <span class="va">S</span>, to <span class="op">=</span> <span class="va">I</span>, label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="va">lambda</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="../reference/flow.html">flow</a></span><span class="op">(</span>from <span class="op">=</span> <span class="va">I</span>, to <span class="op">=</span> <span class="va">R</span>, label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="va">gamma</span><span class="op">)</span><span class="op">)</span></span>
-<span>  </span>
+<span></span>
 <span>  <span class="co"># return a list of the left, right, bottom and top co-ordinates</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>x0 <span class="op">=</span> <span class="va">S</span><span class="op">$</span><span class="va">x0</span>, x1 <span class="op">=</span> <span class="va">R</span><span class="op">$</span><span class="va">x1</span>, y0 <span class="op">=</span> <span class="va">S</span><span class="op">$</span><span class="va">y0</span>, y1 <span class="op">=</span> <span class="va">S</span><span class="op">$</span><span class="va">y1</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<p>While you can plot the diagram interactively in the plotting device using the function <code><a href="../reference/flodia.html">flodia()</a></code>, it is often better to plot directly to png using <code><a href="../reference/flodia_png.html">flodia_png()</a></code>. This maintains the aspect ratio of the diagram, which is automatically calculated to keep the plotting grid square, and will save you time in the long run.</p>
+<p>While you can plot the diagram interactively in the plotting device
+using the function <code><a href="../reference/flodia.html">flodia()</a></code>, it is often better to plot
+directly to png using <code><a href="../reference/flodia_png.html">flodia_png()</a></code>. This maintains the
+aspect ratio of the diagram, which is automatically calculated to keep
+the plotting grid square, and will save you time in the long run.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/flodia_png.html">flodia_png</a></span><span class="op">(</span><span class="va">sir</span>, filepath <span class="op">=</span> <span class="st">"figs/example1.png"</span>, res <span class="op">=</span> <span class="fl">250</span><span class="op">)</span></span>
 <span><span class="co">#&gt; quartz_off_screen </span></span>
@@ -148,15 +178,33 @@
 <div class="section level3">
 <h3 id="example-2-adding-more-complex-flows">Example 2: Adding more complex flows<a class="anchor" aria-label="anchor" href="#example-2-adding-more-complex-flows"></a>
 </h3>
-<p>In addition to simple flows, <code>flodia</code> provides functions to connect two or more nodes in a few different ways: namely <code>bend</code>, <code>turn</code>, <code>split</code> and <code>fork</code>. Each of these functions comes in an -x or -y variant, depending on the direction of the flow required (e.g. <code><a href="../reference/bendx.html">bendx()</a></code> and <code><a href="../reference/bendy.html">bendy()</a></code>).</p>
-<p>These can be used to create more complex diagrams, for instance, we can adapt the above SIR model by allowing an incubation period (E), <code>fork</code> the infected compartment (I) into individuals with disease (D) and those who remain asymptomatic (A), allow them to recover at different rates (by adding a <code>bend</code> into R), and incorporate waning of immunity (by adding a <code>turn</code> from R to S).</p>
-<p>We can also colour the nodes according to whether they are susceptible to infection, currently infectious (or not), or immune. <code>flodia</code> includes two colour palettes <code><a href="../reference/light_palette.html">light_palette()</a></code> and <code><a href="../reference/mid_palette.html">mid_palette()</a></code> which assemble colours from fantastic <a href="https://github.com/ewenme/ghibli" class="external-link">ghibli palette</a>, but you can specify any colour scheme you like. There are a host of other formatting options, giving control over positioning, style and font which can be explored by reading the help functions for each type of flow.</p>
+<p>In addition to simple flows, <code>flodia</code> provides functions
+to connect two or more nodes in a few different ways: namely
+<code>bend</code>, <code>turn</code>, <code>split</code> and
+<code>fork</code>. Each of these functions comes in an -x or -y variant,
+depending on the direction of the flow required
+(e.g. <code><a href="../reference/bendx.html">bendx()</a></code> and <code><a href="../reference/bendy.html">bendy()</a></code>).</p>
+<p>These can be used to create more complex diagrams, for instance, we
+can adapt the above SIR model by allowing an incubation period (E),
+<code>fork</code> the infected compartment (I) into individuals with
+disease (D) and those who remain asymptomatic (A), allow them to recover
+at different rates (by adding a <code>bend</code> into R), and
+incorporate waning of immunity (by adding a <code>turn</code> from R to
+S).</p>
+<p>We can also colour the nodes according to whether they are
+susceptible to infection, currently infectious (or not), or immune.
+<code>flodia</code> includes two colour palettes
+<code><a href="../reference/light_palette.html">light_palette()</a></code> and <code><a href="../reference/mid_palette.html">mid_palette()</a></code> which
+assemble colours from fantastic <a href="https://github.com/ewenme/ghibli" class="external-link">ghibli palette</a>, but you can
+specify any colour scheme you like. There are a host of other formatting
+options, giving control over positioning, style and font which can be
+explored by reading the help functions for each type of flow.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">sedar</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">S_x</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">S_y</span> <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>                 <span class="va">label</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>S <span class="op">=</span> <span class="st">"S"</span>, E <span class="op">=</span> <span class="st">"E"</span>, D <span class="op">=</span> <span class="st">"D"</span>, A <span class="op">=</span> <span class="st">"A"</span>, R <span class="op">=</span> <span class="st">"R"</span><span class="op">)</span>,</span>
 <span>                 <span class="va">RS_pos</span> <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  </span>
+<span></span>
 <span>  <span class="co"># define the radius of the nodes</span></span>
 <span>  <span class="va">r</span> <span class="op">&lt;-</span> <span class="fl">0.1</span></span>
 <span>  <span class="va">xgap</span> <span class="op">&lt;-</span> <span class="fl">0.3</span></span>
@@ -210,15 +258,30 @@
 <span><span class="co">#&gt; quartz_off_screen </span></span>
 <span><span class="co">#&gt;                 3</span></span></code></pre></div>
 <div class="figure">
-<img src="figs/example2.png" style="width:15cm" alt=""><p class="caption">Colour-coded SEIRS diagram with disease and asymptomatic carriage</p>
+<img src="figs/example2.png" style="width:15cm" alt=""><p class="caption">Colour-coded SEIRS diagram with disease and
+asymptomatic carriage</p>
 </div>
 </div>
 <div class="section level3">
 <h3 id="example-3-grouping-nodes">Example 3: Grouping nodes<a class="anchor" aria-label="anchor" href="#example-3-grouping-nodes"></a>
 </h3>
-<p>It is often useful to group nodes together, we can simplify a diagram by using a single flow to represent a process affecting a group of nodes, rather than individual flows from each. Flodia allows for flows into or out of a diagram (i.e. only connected to a node at one end), via an optional <code>length</code> argument to <code><a href="../reference/flowx.html">flowx()</a></code>, <code><a href="../reference/flowy.html">flowy()</a></code>, <code><a href="../reference/forkx.html">forkx()</a></code>, <code><a href="../reference/forky.html">forky()</a></code>, <code><a href="../reference/splitx.html">splitx()</a></code>, and <code><a href="../reference/splity.html">splity()</a></code>.</p>
-<p>To continue our previous example, we may for instance want to allow for demographic changes in our model of disease transmission. Individuals are born susceptible to infection, but may die in any stage of infection. While we could add flows out of each compartment to represent deaths, this would quickly become messy, so we instead group the nodes together, and add a flow out of the group.</p>
-<p>You may have noticed that we included the node “S” in the list returned by the function in Example 2. By outputting a node we are able to flow directly into it, regardless of whether it is part of a group.</p>
+<p>It is often useful to group nodes together, we can simplify a diagram
+by using a single flow to represent a process affecting a group of
+nodes, rather than individual flows from each. Flodia allows for flows
+into or out of a diagram (i.e. only connected to a node at one end), via
+an optional <code>length</code> argument to <code><a href="../reference/flowx.html">flowx()</a></code>,
+<code><a href="../reference/flowy.html">flowy()</a></code>, <code><a href="../reference/forkx.html">forkx()</a></code>, <code><a href="../reference/forky.html">forky()</a></code>,
+<code><a href="../reference/splitx.html">splitx()</a></code>, and <code><a href="../reference/splity.html">splity()</a></code>.</p>
+<p>To continue our previous example, we may for instance want to allow
+for demographic changes in our model of disease transmission.
+Individuals are born susceptible to infection, but may die in any stage
+of infection. While we could add flows out of each compartment to
+represent deaths, this would quickly become messy, so we instead group
+the nodes together, and add a flow out of the group.</p>
+<p>You may have noticed that we included the node “S” in the list
+returned by the function in Example 2. By outputting a node we are able
+to flow directly into it, regardless of whether it is part of a
+group.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sedar_group</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">S_x</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">S_y</span> <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>                 <span class="va">label</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>S <span class="op">=</span> <span class="st">"S"</span>, E <span class="op">=</span> <span class="st">"E"</span>, D <span class="op">=</span> <span class="st">"D"</span>, A <span class="op">=</span> <span class="st">"A"</span>, R <span class="op">=</span> <span class="st">"R"</span><span class="op">)</span>,</span>
@@ -245,15 +308,34 @@
 <span><span class="co">#&gt; quartz_off_screen </span></span>
 <span><span class="co">#&gt;                 3</span></span></code></pre></div>
 <div class="figure">
-<img src="figs/example3.png" style="width:15cm" alt=""><p class="caption">Colour-coded SEIRS diagram with disease and asymptomatic carriage and demography</p>
+<img src="figs/example3.png" style="width:15cm" alt=""><p class="caption">Colour-coded SEIRS diagram with disease and
+asymptomatic carriage and demography</p>
 </div>
 </div>
 <div class="section level3">
 <h3 id="example-4-combining-groups">Example 4: Combining groups<a class="anchor" aria-label="anchor" href="#example-4-combining-groups"></a>
 </h3>
-<p>When we want to produce multiple sub-diagrams it is often easiest to provide arguments representing the differences between the sub-diagrams to a flodia function. You may have noticed that we provided optional arguments to the functions in Examples 2 and 3, which we have not yet used (but will now come in handy), specifying the x and y co-ordinates of the “S” node, as well as the node labels.</p>
-<p>To continue our previous example of a model of infectious disease, we may want to allow for the possibility of vaccination for susceptible (S) individuals in our SEIRS model diagram. If the vaccine does not provide perfect protection, then we need to mirror the infection process in the vaccinated nodes, which means repeating a grouped sub-diagram. Additionally the vaccine may wane after a time, so we need to flow back from the vaccinated to unvaccinated group.</p>
-<p>This can be accomplished by calling our previously written function from Example 3, but providing different arguments to represent the mirrored unvaccinated and vaccinated groups. Here we give nodes in the vaccinated group the superscript *, and use the argument governing the co-ordinates of “S” to position the vaccinated group relative to the unvaccinated group. We can then use flows to connect the groups, and nodes within them (as long as we have passed the required nodes out of the grouping functions, as we have made sure to do here).</p>
+<p>When we want to produce multiple sub-diagrams it is often easiest to
+provide arguments representing the differences between the sub-diagrams
+to a flodia function. You may have noticed that we provided optional
+arguments to the functions in Examples 2 and 3, which we have not yet
+used (but will now come in handy), specifying the x and y co-ordinates
+of the “S” node, as well as the node labels.</p>
+<p>To continue our previous example of a model of infectious disease, we
+may want to allow for the possibility of vaccination for susceptible (S)
+individuals in our SEIRS model diagram. If the vaccine does not provide
+perfect protection, then we need to mirror the infection process in the
+vaccinated nodes, which means repeating a grouped sub-diagram.
+Additionally the vaccine may wane after a time, so we need to flow back
+from the vaccinated to unvaccinated group.</p>
+<p>This can be accomplished by calling our previously written function
+from Example 3, but providing different arguments to represent the
+mirrored unvaccinated and vaccinated groups. Here we give nodes in the
+vaccinated group the superscript *, and use the argument governing the
+co-ordinates of “S” to position the vaccinated group relative to the
+unvaccinated group. We can then use flows to connect the groups, and
+nodes within them (as long as we have passed the required nodes out of
+the grouping functions, as we have made sure to do here).</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vax</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">labels_U</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>S <span class="op">=</span> <span class="st">"S"</span>, E <span class="op">=</span> <span class="st">"E"</span>, D <span class="op">=</span> <span class="st">"D"</span>, A <span class="op">=</span> <span class="st">"A"</span>, R <span class="op">=</span> <span class="st">"R"</span><span class="op">)</span></span>
@@ -300,7 +382,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
