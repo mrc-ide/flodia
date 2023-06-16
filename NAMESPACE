@@ -3,6 +3,7 @@
 export(bendx)
 export(bendy)
 export(calc_pos)
+export(find_centre)
 export(flodia)
 export(flodia_null)
 export(flodia_pdf)

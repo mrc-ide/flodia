@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' data-engine-version='2.0' width='720.00pt' height='576.00pt' viewBox='0 0 720.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='576.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
+<text x='360.00' y='587.52' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text transform='translate(-2.88,288.00) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
+<rect x='255.83' y='204.67' width='208.33' height='166.67' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<text x='360.00' y='300.39' text-anchor='middle' style='font-size: 36.00px; fill: #278B9A; font-family: sans;' textLength='21.99px' lengthAdjust='spacingAndGlyphs'>Z</text>
+<rect x='47.50' y='338.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='47.50' y1='338.00' x2='255.83' y2='338.00' style='stroke-width: 0.75;' />
+<polygon points='250.54,339.76 255.83,338.00 250.54,336.24 ' style='stroke-width: 0.00000075; fill: #000000;' />
+<text x='151.67' y='333.10' text-anchor='middle' style='font-size: 9.60px; font-style: italic; font-family: sans;' textLength='40.56px' lengthAdjust='spacingAndGlyphs'>inx L to R</text>
+<rect x='672.50' y='338.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='672.50' y1='338.00' x2='464.17' y2='338.00' style='stroke-width: 0.75; stroke: #92BBD9;' />
+<polygon points='471.22,334.47 464.17,338.00 471.22,341.53 ' style='stroke-width: 0.00000075; stroke: #92BBD9; fill: #92BBD9;' />
+<text x='526.67' y='358.10' text-anchor='middle' style='font-size: 9.60px; font-style: italic; fill: #5C5992; font-family: sans;' textLength='40.56px' lengthAdjust='spacingAndGlyphs'>inx R to L</text>
+<rect x='297.50' y='538.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='297.50' y1='538.00' x2='297.50' y2='371.33' style='stroke-width: 0.75; stroke: #58A449;' />
+<polygon points='299.26,376.62 297.50,371.33 295.74,376.62 ' style='stroke-width: 0.00000075; stroke: #58A449; fill: #58A449;' />
+<text x='255.83' y='407.15' text-anchor='middle' style='font-size: 9.60px; font-style: italic; fill: #CEC917; font-family: sans;' textLength='40.55px' lengthAdjust='spacingAndGlyphs'>iny B to T</text>
+<rect x='297.50' y='38.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='297.50' y1='38.00' x2='297.50' y2='204.67' style='stroke-width: 0.75;' />
+<polygon points='295.74,199.38 297.50,204.67 299.26,199.38 ' style='stroke-width: 0.00000075; fill: #000000;' />
+<text x='255.83' y='173.82' text-anchor='middle' style='font-size: 9.60px; font-style: italic; font-family: sans;' textLength='40.55px' lengthAdjust='spacingAndGlyphs'>iny T to B</text>
+<rect x='672.50' y='238.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='464.17' y1='238.00' x2='672.50' y2='238.00' style='stroke-width: 0.75;' />
+<polygon points='667.21,239.76 672.50,238.00 667.21,236.24 ' style='stroke-width: 0.00000075; fill: #000000;' />
+<text x='568.33' y='232.92' text-anchor='middle' style='font-size: 9.60px; font-style: italic; font-family: sans;' textLength='46.43px' lengthAdjust='spacingAndGlyphs'>outx L to R</text>
+<rect x='47.50' y='238.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='255.83' y1='238.00' x2='47.50' y2='238.00' style='stroke-width: 0.75; stroke: #92BBD9;' />
+<polygon points='54.55,234.47 47.50,238.00 54.55,241.53 ' style='stroke-width: 0.00000075; stroke: #92BBD9; fill: #92BBD9;' />
+<text x='110.00' y='257.92' text-anchor='middle' style='font-size: 9.60px; font-style: italic; fill: #5C5992; font-family: sans;' textLength='46.43px' lengthAdjust='spacingAndGlyphs'>outx R to L</text>
+<rect x='422.50' y='38.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='422.50' y1='204.67' x2='422.50' y2='38.00' style='stroke-width: 0.75; stroke: #58A449;' />
+<polygon points='424.26,43.29 422.50,38.00 420.74,43.29 ' style='stroke-width: 0.00000075; stroke: #58A449; fill: #58A449;' />
+<text x='380.83' y='173.64' text-anchor='middle' style='font-size: 9.60px; font-style: italic; fill: #CEC917; font-family: sans;' textLength='46.43px' lengthAdjust='spacingAndGlyphs'>outy B to T</text>
+<rect x='422.50' y='538.00' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='422.50' y1='371.33' x2='422.50' y2='538.00' style='stroke-width: 0.75;' />
+<polygon points='420.74,532.71 422.50,538.00 424.26,532.71 ' style='stroke-width: 0.00000075; fill: #000000;' />
+<text x='464.17' y='406.97' text-anchor='middle' style='font-size: 9.60px; font-style: italic; font-family: sans;' textLength='46.43px' lengthAdjust='spacingAndGlyphs'>outy T to B</text>
+</g>
+</svg>

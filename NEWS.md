@@ -1,3 +1,6 @@
+# flodia 0.0.12
+* output x and y co-ordinates of a group
+
 # flodia 0.0.11
 * enable saving as pdf
 

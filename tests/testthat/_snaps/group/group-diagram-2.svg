@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' data-engine-version='2.0' width='720.00pt' height='576.00pt' viewBox='0 0 720.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='576.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
+<text x='360.00' y='587.52' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text transform='translate(-2.88,288.00) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
+<rect x='71.11' y='448.00' width='88.89' height='71.11' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<rect x='515.56' y='448.00' width='88.89' height='71.11' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<rect x='471.11' y='412.44' width='177.78' height='142.22' style='stroke-width: 0.75;' />
+<rect x='515.56' y='448.00' width='88.89' height='71.11' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<rect x='337.78' y='56.89' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<rect x='337.78' y='270.22' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='337.78' y1='56.89' x2='337.78' y2='270.22' style='stroke-width: 0.75;' />
+<rect x='115.56' y='270.22' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='337.78' y1='270.22' x2='115.56' y2='270.22' style='stroke-width: 0.75;' />
+<line x1='115.56' y1='270.22' x2='115.56' y2='448.00' style='stroke-width: 0.75;' />
+<polygon points='113.79,442.71 115.56,448.00 117.32,442.71 ' style='stroke-width: 0.00000075; fill: #000000;' />
+<rect x='560.00' y='270.22' width='0.00' height='0.00' style='stroke-width: 0.75; fill: #CCCCCC;' />
+<line x1='337.78' y1='270.22' x2='560.00' y2='270.22' style='stroke-width: 0.75;' />
+<line x1='560.00' y1='270.22' x2='560.00' y2='412.44' style='stroke-width: 0.75;' />
+<polygon points='558.24,407.15 560.00,412.44 561.76,407.15 ' style='stroke-width: 0.00000075; fill: #000000;' />
+</g>
+</svg>

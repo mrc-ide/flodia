@@ -3,7 +3,7 @@
 }
 
 xoverlap1 <- function(node0, node1) {
-  if ((node1$x0 >= node0$x0) & (node1$x0 <= node0$x1)) {
+  if ((node1$x0 >= node0$x0) && (node1$x0 <= node0$x1)) {
     ret <- list(x0 = node1$x0, x1 = min(node0$x1, node1$x1))
   } else {
     ret <- NA
@@ -29,7 +29,7 @@ assert_xoverlap <- function(node0, node1,
 }
 
 yoverlap1 <- function(node0, node1) {
-  if ((node1$y0 >= node0$y0) & (node1$y0 <= node0$y1)) {
+  if ((node1$y0 >= node0$y0) && (node1$y0 <= node0$y1)) {
     ret <- list(y0 = node1$y0, y1 = min(node0$y1, node1$y1))
   } else {
     ret <- NA
@@ -60,7 +60,7 @@ assert_no_intersect <- function(node0, node1,
                                 name1 = deparse(substitute(node1))) {
   x <- xoverlap(node0, node1)
   y <- yoverlap(node0, node1)
-  if ((length(x) > 1) & (length(y) > 1)) {
+  if ((length(x) > 1) && (length(y) > 1)) {
     stop(sprintf("%s and %s must not intersect", name0, name1))
   }
 }

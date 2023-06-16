@@ -30,6 +30,7 @@ group <- function(f, args = list(), oma = rep(0.1, 4), group_col = NULL,
   g$y0 <- g$y0 - oma[1]
   g$x1 <- g$x1 + oma[4]
   g$y1 <- g$y1 + oma[3]
+  g <- find_centre(g)
 
   label_x <- label_x %||% calc_pos(g$x0, g$x1, label_pos_x)
   label_y <- label_y %||% calc_pos(g$y0, g$y1, label_pos_y)
