@@ -25,3 +25,15 @@ test_that("group function works as expected", {
   vdiffr::expect_doppelganger("Group diagram", fig = function() flodia(vax))
 
 })
+
+test_that("can connect groups with fork arrows", {
+  f <- function(x, y) node(x, y)
+  g <- function() {
+    a <- f(x = 0, y = 0)
+    b <- group(f, list(x = 1, y = 0))
+    arr <- forky(to0 = a, to1 = b, length = -1)
+    list(x0 = a$x0, x1 = b$x1, y0 = a$y0, y1 = arr$y1)
+  }
+
+  vdiffr::expect_doppelganger("Group diagram 2", fig = function() flodia(g))
+})

@@ -39,7 +39,6 @@ The following code plots a simple flow diagram for a [Susceptible-Infected-Recov
 library("flodia")
 
 sir <- function() {
-  
   # define the radius of the nodes
   r <- 0.1
   xgap <- 0.3
@@ -50,11 +49,11 @@ sir <- function() {
   I <- node(x = S$x1 + xgap, y = S$y, r = r, label = "I")
   # draw the third node xgap units to the right of the second
   R <- node(x = I$x1 + xgap, y = S$y, r = r, label = "R")
-  
+
   # connect the nodes together with flows
   flow(from = S, to = I, label = expression(lambda))
   flow(from = I, to = R, label = expression(gamma))
-  
+
   # return a list of the left, right, bottom and top co-ordinates
   list(x0 = S$x0, x1 = R$x1, y0 = S$y0, y1 = S$y1)
 }
@@ -84,7 +83,7 @@ We can also colour the nodes according to whether they are susceptible to infect
 sedar <- function(S_x = 1, S_y = 1,
                  label = list(S = "S", E = "E", D = "D", A = "A", R = "R"),
                  RS_pos = 0.5) {
-  
+
   # define the radius of the nodes
   r <- 0.1
   xgap <- 0.3

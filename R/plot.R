@@ -75,7 +75,7 @@ flodia_null <- function(f, args = list(), oma = rep(0.1, 4)) {
 #' @param ... other arguments to pdf()
 #' @importFrom grDevices pdf
 #' @export
-flodia_pdf <- function (f, filepath, width = 19 / 2.5, oma = rep(0.1, 4),
+flodia_pdf <- function(f, filepath, width = 19 / 2.5, oma = rep(0.1, 4),
                         args = list(), ...) {
   z <- flodia_null(f, args, oma)
   height <- round(width * (z$y1 - z$y0) / (z$x1 - z$x0))

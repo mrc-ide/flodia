@@ -48,6 +48,7 @@ test_that("forkx and forky work as expected", {
 })
 
 test_that("can specify forkx and forky by length", {
+  plot.new()
   plot(0, 0, type = "n", xlim = c(-1, 2), ylim = c(-1, 2))
   r <- 0.1
   n2 <- node(0.7, 0.9, r, label = 2)
